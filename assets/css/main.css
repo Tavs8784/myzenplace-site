@@ -1891,7 +1891,7 @@ input, select, textarea {
                                         }
 
                #header .branding {
-                       display: fixed;         /* you already have this */
+                       display: flex;         /* you already have this */
   align-items: center;   /* you already have this */
   gap: 0.5rem;
   flex: 1 1 auto;        /* allow it to shrink */
@@ -1899,7 +1899,7 @@ input, select, textarea {
                }
 
                #header .store-links {
-                       display: inline-block;
+                       display: flex;
                        align-items: center;
                         margin-top: 0.5rem;
                }
@@ -1921,7 +1921,7 @@ input, select, textarea {
 
 			#header {
 				height: 3em;
-				line-height: 3em;
+				line-height: 2.5em;
 			}
 
                                 #header h1 {
