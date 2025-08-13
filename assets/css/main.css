@@ -539,6 +539,17 @@ input, select, textarea {
 				header nav { display: none; }
 			}
 
+
+
+		}
+
+		@media screen and (max-width: 850px) {
+
+				header nav { display: none; }
+			}
+
+			
+
 		}
 
 		@media screen and (max-width: 736px) {
@@ -1907,7 +1918,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#header {
-				height: 3.5em;
+				height: 3.1em;
 				line-height: 2.5em;
 			}
 
