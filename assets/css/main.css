@@ -1876,20 +1876,26 @@ input, select, textarea {
                                                 outline: 0;
                                         }
 
-                #header .branding {
-                        display: flex;
-                        align-items: center;
-                }
+               #header .branding {
+                       display: flex;
+                       align-items: center;
+                       height: 100%;
+               }
 
-                #header .store-links a {
-                        display: inline-block;
-                        margin-left: 0.5rem;
-                }
+               #header .store-links {
+                       display: flex;
+                       align-items: center;
+               }
 
-                #header .store-links img {
-                        height: 2em;
-                        width: auto;
-                }
+               #header .store-links a {
+                       display: inline-block;
+                       margin-left: 0.5rem;
+               }
+
+               #header .store-links img {
+                       height: 2em;
+                       width: auto;
+               }
 
 		@media screen and (max-width: 736px) {
 
