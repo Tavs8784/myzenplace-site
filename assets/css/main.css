@@ -1886,6 +1886,7 @@ input, select, textarea {
                #header .store-links {
                        display: flex;
                        align-items: center;
+                        margin-top: 0.5rem;
                }
 
                #header .store-links a {
