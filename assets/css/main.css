@@ -1910,7 +1910,7 @@ input, select, textarea {
                }
 
                #header .store-links img {
-                       height: 2em;
+                       height: auto;
                        width: auto;
                        align-items: center;
                }
