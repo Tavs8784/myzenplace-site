@@ -543,7 +543,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 800px) {
+		@media screen and (max-width: 850px) {
 
 				header nav { display: none; }
 			}
@@ -1917,9 +1917,7 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			#header .store-links {
-                       
-                        margin-top: 0.2rem;
+			
 
 			#header {
 				height: 3.1em;
