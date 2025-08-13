@@ -1838,46 +1838,58 @@ input, select, textarea {
 		box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
 	}
 
-		#header h1 {
-			position: absolute;
-			left: 1em;
-			top: 0;
-			height: 3em;
-			line-height: 3em;
-			cursor: default;
-		}
+                #header h1 {
+                        margin: 0 0 0 1em;
+                        line-height: 1;
+                        cursor: default;
+                }
 
 			#header h1 a {
 				font-size: 1.25em;
 			}
 
-		#header nav {
-			position: absolute;
-			right: 0.5em;
-			top: 0;
-			height: 3em;
-			line-height: 3em;
-		}
+                #header nav {
+                        position: absolute;
+                        right: 0.5em;
+                        top: 0;
+                        height: 3em;
+                        line-height: 3em;
+                }
 
-			#header nav ul {
-				margin: 0;
-			}
+                        #header nav ul {
+                                margin: 0;
+                        }
 
-				#header nav ul li {
-					display: inline-block;
-					margin-left: 0.5em;
-					font-size: 0.9em;
-				}
+                                #header nav ul li {
+                                        display: inline-block;
+                                        margin-left: 0.5em;
+                                        font-size: 0.9em;
+                                }
 
-					#header nav ul li a {
-						display: block;
-						color: inherit;
-						text-decoration: none;
-						height: 3em;
-						line-height: 3em;
-						padding: 0 0.5em 0 0.5em;
-						outline: 0;
-					}
+                                        #header nav ul li a {
+                                                display: block;
+                                                color: inherit;
+                                                text-decoration: none;
+                                                height: 3em;
+                                                line-height: 3em;
+                                                padding: 0 0.5em 0 0.5em;
+                                                outline: 0;
+                                        }
+
+                #header .branding {
+                        display: flex;
+                        align-items: center;
+                }
+
+                #header .store-links a {
+                        display: inline-block;
+                        margin-left: 0.5rem;
+                }
+
+                #header .store-links img {
+                        height: 2em;
+                        width: auto;
+                }
 
 		@media screen and (max-width: 736px) {
 
@@ -1886,14 +1898,11 @@ input, select, textarea {
 				line-height: 2.5em;
 			}
 
-				#header h1 {
-					text-align: center;
-					position: relative;
-					left: 0;
-					top: 0;
-					height: 2.5em;
-					line-height: 2.5em;
-				}
+                                #header h1 {
+                                        text-align: center;
+                                        margin-left: 0;
+                                        line-height: 1;
+                                }
 
 					#header h1 a {
 						font-size: 1em;
