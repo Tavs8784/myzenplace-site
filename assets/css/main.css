@@ -1837,6 +1837,7 @@ input, select, textarea {
                display: flex;
                align-items: center;
                box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
+               justify-content: space-between;
        }
 
                 #header h1 {
@@ -1850,11 +1851,11 @@ input, select, textarea {
 			}
 
                 #header nav {
-                        position: absolute;
+                        position: static;
                         right: 0.5em;
                         top: 0;
-                        height: 3em;
-                        line-height: 3em;
+                        height: auto;
+                        line-height: normal;
                 }
 
                         #header nav ul {
@@ -1878,9 +1879,11 @@ input, select, textarea {
                                         }
 
                #header .branding {
-                       display: flex;
-                       align-items: center;
-                       height: 100%;
+                       display: flex;         /* you already have this */
+  align-items: center;   /* you already have this */
+  gap: 0.5rem;
+  flex: 1 1 auto;        /* allow it to shrink */
+  min-width: 0;
                }
 
                #header .store-links {
