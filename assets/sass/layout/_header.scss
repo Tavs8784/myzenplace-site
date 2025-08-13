@@ -6,80 +6,96 @@
 
 /* Header */
 
-	#header {
-		position: fixed;
-		z-index: 10000;
-		left: 0;
-		top: 0;
-		width: 100%;
-		background: transparentize(_palette(bg), 0.05);
-		height: 3em;
-		line-height: 3em;
-		box-shadow: 0 0 0.15em 0 rgba(0,0,0,0.1);
+       #header {
+               position: fixed;
+               z-index: 10000;
+               left: 0;
+               top: 0;
+               width: 100%;
+               background: transparentize(_palette(bg), 0.05);
+               height: 3em;
+               display: flex;
+               align-items: center;
+               box-shadow: 0 0 0.15em 0 rgba(0,0,0,0.1);
 
-		h1 {
-			position: absolute;
-			left: 1em;
-			top: 0;
-			height: 3em;
-			line-height: 3em;
-			cursor: default;
+               .branding {
+                       display: flex;
+                       align-items: center;
+                       height: 100%;
 
-			a {
-				font-size: 1.25em;
-			}
-		}
+                       h1 {
+                               margin: 0 0 0 1em;
+                               line-height: 1;
+                               cursor: default;
 
-		nav {
-			position: absolute;
-			right: 0.5em;
-			top: 0;
-			height: 3em;
-			line-height: 3em;
+                               a {
+                                       font-size: 1.25em;
+                               }
+                       }
 
-			ul {
-				margin: 0;
+                       .store-links {
+                               display: flex;
+                               align-items: center;
 
-				li {
-					display: inline-block;
-					margin-left: 0.5em;
-					font-size: 0.9em;
+                               a {
+                                       display: inline-block;
+                                       margin-left: 0.5rem;
+                               }
 
-					a {
-						display: block;
-						color: inherit;
-						text-decoration: none;
-						height: 3em;
-						line-height: 3em;
-						padding: 0 0.5em 0 0.5em;
-						outline: 0;
-					}
-				}
-			}
-		}
+                               img {
+                                       height: 2em;
+                                       width: auto;
+                               }
+                       }
+               }
 
-		@include breakpoint('<=small') {
-			height: 2.5em;
-			line-height: 2.5em;
+               nav {
+                       position: absolute;
+                       right: 0.5em;
+                       top: 0;
+                       height: 3em;
+                       line-height: 3em;
 
-			h1 {
-				text-align: center;
-				position: relative;
-				left: 0;
-				top: 0;
-				height: 2.5em;
-				line-height: 2.5em;
+                       ul {
+                               margin: 0;
 
-				a {
-					font-size: 1em;
-				}
-			}
+                               li {
+                                       display: inline-block;
+                                       margin-left: 0.5em;
+                                       font-size: 0.9em;
 
-			nav {
-				display: none;
-			}
-		}
-	}
+                                       a {
+                                               display: block;
+                                               color: inherit;
+                                               text-decoration: none;
+                                               height: 3em;
+                                               line-height: 3em;
+                                               padding: 0 0.5em 0 0.5em;
+                                               outline: 0;
+                                       }
+                               }
+                       }
+               }
+
+               @include breakpoint('<=small') {
+                       height: 2.5em;
+
+                       .branding {
+                               h1 {
+                                       text-align: center;
+                                       margin: 0;
+
+                                       a {
+                                               font-size: 1em;
+                                       }
+                               }
+                       }
+
+                       nav {
+                               display: none;
+                       }
+               }
+       }
 
 	body {
 		padding-top: 3em;

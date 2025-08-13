@@ -1826,17 +1826,18 @@ input, select, textarea {
 
 /* Header */
 
-	#header {
-		position: fixed;
-		z-index: 10000;
-		left: 0;
-		top: 0;
-		width: 100%;
-		background: rgba(255, 255, 255, 0.95);
-		height: 3em;
-		line-height: 3em;
-		box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
-	}
+       #header {
+               position: fixed;
+               z-index: 10000;
+               left: 0;
+               top: 0;
+               width: 100%;
+               background: rgba(255, 255, 255, 0.95);
+               height: 3em;
+               display: flex;
+               align-items: center;
+               box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
+       }
 
                 #header h1 {
                         margin: 0 0 0 1em;
