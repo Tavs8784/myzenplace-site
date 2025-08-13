@@ -1917,12 +1917,8 @@ input, select, textarea {
 
 		@media screen and (max-width: 736px) {
 
-			.store-links { 
-				margin-top: 0.3rem;
-
-			}
 			#header {
-				height: 2.5em;
+				height: 3.1em;
 				line-height: 2.5em;
 			}
 
