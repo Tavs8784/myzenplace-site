@@ -536,6 +536,7 @@ input, select, textarea {
 
 			body, input, textarea, select {
 				font-size: 13pt;
+				#header nav { display: none; }
 			}
 
 		}
@@ -1906,8 +1907,8 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			#header {
-				height: 2.5em;
-				line-height: 3em;
+				height: 3em;
+				line-height: 2.5em;
 			}
 
                                 #header h1 {
