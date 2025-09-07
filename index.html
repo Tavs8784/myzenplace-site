@@ -47,25 +47,46 @@
 				</nav>
 			</header>
 
-		<!-- Intro -->
-			<section id="intro" class="main style1 dark fullscreen">
-				<div class="content">
-					<header>
-						<h2>Welcome</h2>
-					</header>
-                                       <p><strong>to your personalized haven for mindfulness, creativity, and sensory relief!</strong></p>
-                                       <div class="video-wrapper">
-                                               <iframe src="https://www.youtube.com/embed/d7O5-YZnIww"
-                                                       title="My Zen Place Demo"
-                                                       frameborder="0"
-                                                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                       allowfullscreen></iframe>
-                                       </div>
-                                       <footer>
-                                               <a href="#one" class="button style2 down">More</a>
-                                       </footer>
-                               </div>
-                       </section>
+		 <!-- Intro -->
+    <section id="intro" class="main style1 dark fullscreen">
+      <div class="content">
+        <header>
+          <h2>Welcome</h2>
+        </header>
+        <p><strong>to your personalized haven for mindfulness, creativity, and sensory relief!</strong></p>
+        <footer>
+          <a href="#trailer" class="button style2 down">Watch Trailer</a>
+        </footer>
+      </div>
+    </section>
+
+    <!-- Trailer (HTML5 video – no YouTube UI, no channel links) -->
+    <section id="trailer" class="main style3 primary">
+      <div class="content">
+        <header>
+          <h2>Gameplay Trailer</h2>
+        </header>
+        <div class="video-wrapper">
+          <!--
+            Place your video files in /videos/
+            Recommended: provide both WebM and MP4 for wider compatibility.
+            Replace the filenames below with your actual files.
+          -->
+          <video
+            controls
+            preload="metadata"
+            playsinline
+            poster="images/trailer-poster.jpg">
+            <source src="videos/my-zen-place.webm" type="video/webm">
+            <source src="videos/my-zen-place.mp4" type="video/mp4">
+            Sorry, your browser doesn't support embedded videos.
+          </video>
+          <div class="video-caption">Native HTML5 video player — privacy-friendly and brand-free.</div>
+        </div>
+      </div>
+      <a href="#one" class="button style2 down anchored">Next</a>
+    </section>
+
 
 		<!-- One -->
 			<section id="one" class="main style2 right dark fullscreen">
