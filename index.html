@@ -57,13 +57,13 @@
           <h2>Welcome</h2>
         </header>
         <p><strong>to your personalized haven for mindfulness, creativity, and sensory relief!</strong></p>
-        <div class="video-wrapper">
+          <div class="video-wrapper">
           <!--
             Place your video files in /videos/
             Recommended: provide both WebM and MP4 for wider compatibility.
             Replace the filenames below with your actual files.
           -->
-          <video
+          <video id="heroVideo"
             controls
             preload="metadata"
             playsinline
@@ -72,11 +72,12 @@
             <source src="videos/my-zen-place.mp4" type="video/mp4">
             Sorry, your browser doesn't support embedded videos.
           </video>
-          <div class="video-caption">Native HTML5 video player — privacy-friendly and brand-free.</div>
+            <p id="videoFallbackLink" class="video-caption" style="display:none;">Having trouble? <a href="videos/my-zen-place.mp4" target="_blank" rel="noopener">Open the MP4 directly</a>.</p>
         <footer>
           <a href="#one" class="button style2 down">Next</a>
         </footer>
       </div>
+        
     </section>
 
 		<!-- One -->
