@@ -201,6 +201,15 @@
     <li><input type="submit" value="Send Message"></li>
   </ul>
 </form>
+<p>Prefer email? <a id="support-email" href="#">support@my-zen-place.com</a></p>
+<script>
+  const local = 'support';
+  const domain = 'my-zen-place.com';
+  const el = document.getElementById('support-email');
+  const addr = `${local}@${domain}`;
+  el.textContent = addr;
+  el.href = `mailto:${addr}?subject=My%20Zen%20Place%20Support`;
+</script>
 
 
 
