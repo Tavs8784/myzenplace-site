@@ -237,35 +237,28 @@
 				</div>
 				</section>
         
-        <script>
+ <script>
 (function () {
   try {
     var ua = navigator.userAgent || "";
     var platform = navigator.platform || "";
-    var uaData = navigator.userAgentData || null;
-
-    // Robust-ish detection (covers iPadOS that reports as "Mac" but is touch)
+    // iPadOS reports a desktop UA; the MacIntel + touchpoints check catches it.
     var isIOS = /iPad|iPhone|iPod/.test(ua) ||
                 (platform === "MacIntel" && navigator.maxTouchPoints > 1);
     var isAndroid = /Android/.test(ua);
-    var isMobile = (uaData && uaData.mobile === true) ||
-                   /Mobi|Android|iPhone|iPad|iPod/.test(ua);
 
     var iosLink = document.getElementById("ios-link");
     var androidLink = document.getElementById("android-link");
     if (!iosLink || !androidLink) return;
 
-    // Desktop: show both. Mobile: show only the relevant one.
-    if (isMobile) {
-      if (isIOS) {
-        androidLink.style.display = "none";
-      } else if (isAndroid) {
-        iosLink.style.display = "none";
-      } // unknown mobile → fail open (show both)
+    // Desktop shows both by default. Phones & tablets show only the relevant one.
+    if (isIOS) {
+      androidLink.style.display = "none";
+    } else if (isAndroid) {
+      iosLink.style.display = "none";
     }
-  } catch (e) {
-    // Fail open on any error (show both)
-  }
+    // Unknown platforms (e.g., Windows tablets, ChromeOS) will see both.
+  } catch (_) { /* fail open: show both */ }
 })();
 </script>
 
