@@ -244,17 +244,17 @@
 
   // Config — tweak to taste
   const CONFIG = {
-    density: 0.12,       // particles per 1,000 px²
-    sizeMin: 0.6,        // radius in px (at 1x DPR)
-    sizeMax: 1.8,
-    baseWind: 0.25,      // px/ms (baseline)
-    gustAmp: 0.35,       // added on gust peak
-    gustPeriod: 7000,    // ms between gust peaks
-    verticalDrift: 0.04, // px/ms
-    fade: 0.08,          // trail strength (erase rate)
-    color: 'rgba(255,255,255,0.8)',
-    shadowBlur: 4,
-    dprCap: 2
+   density: 0.06,        // fewer particles (was 0.12)
+  sizeMin: 0.6,
+  sizeMax: 1.8,
+  baseWind: 0.14,       // slower baseline speed (was 0.25)
+  gustAmp: 0.15,        // gentler gusts (was 0.35)
+  gustPeriod: 7000,     // keep rhythm the same (change if you want slower/faster cycles)
+  verticalDrift: 0.02,  // calmer vertical wobble (was 0.04)
+  fade: 0.035,          // LONGER trails (smaller number = longer trail; was 0.08)
+  color: 'rgba(255,255,255,0.8)',
+  shadowBlur: 4,
+  dprCap: 2
   };
 
   let dpr = Math.max(1, Math.min(CONFIG.dprCap, window.devicePixelRatio || 1));
