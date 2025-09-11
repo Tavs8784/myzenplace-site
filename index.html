@@ -1,4 +1,147 @@
 <!DOCTYPE HTML>
+<!-- Wind particles overlay -->
+<canvas id="wind" aria-hidden="true"></canvas>
+
+<style>
+  /* Full-page overlay; set pointer-events to none so it never blocks clicks */
+  #wind {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2; /* raise/lower to sit above/below your UI */
+  }
+
+  /* Respect users who prefer less motion */
+  @media (prefers-reduced-motion: reduce) {
+    #wind { display: none; }
+  }
+</style>
+
+<script>
+(() => {
+  const canvas = document.getElementById('wind');
+  const ctx = canvas.getContext('2d');
+
+  // Config — tweak to taste
+  const CONFIG = {
+    density: 0.12,       // particles per 1,000 px² (0.10–0.20 is subtle)
+    sizeMin: 0.6,        // particle radius (px at 1x)
+    sizeMax: 1.8,
+    baseWind: 0.25,      // baseline horizontal speed (px/ms at 1x)
+    gustAmp: 0.35,       // extra speed added during gusts
+    gustPeriod: 7000,    // ms between gust peaks
+    verticalDrift: 0.04, // slow up/down wobble (px/ms at 1x)
+    fade: 0.08,          // motion trail strength (0=sharp dots, up to ~0.15)
+    color: 'rgba(255,255,255,0.8)', // particle color (try rgba for subtlety)
+    shadowBlur: 4
+  };
+
+  let dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1)); // cap for perf
+  let W = 0, H = 0, particles = [];
+  let last = performance.now();
+
+  function resize() {
+    const { innerWidth, innerHeight } = window;
+    W = Math.floor(innerWidth);
+    H = Math.floor(innerHeight);
+    canvas.width = Math.floor(W * dpr);
+    canvas.height = Math.floor(H * dpr);
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    // Rebuild particle pool based on area
+    const target = Math.floor((W * H) / 1000 * CONFIG.density);
+    particles = buildParticles(target);
+  }
+
+  function rnd(a, b) { return a + Math.random() * (b - a); }
+
+  function buildParticles(count) {
+    const arr = [];
+    for (let i = 0; i < count; i++) {
+      arr.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: rnd(CONFIG.sizeMin, CONFIG.sizeMax),
+        seed: Math.random() * 1000,     // per-particle phase offset
+        alpha: rnd(0.5, 1.0)            // slight opacity variation
+      });
+    }
+    return arr;
+  }
+
+  function gustFactor(t) {
+    // Smooth gusts using a raised-sine curve [0..1]
+    // 0.5 - 0.5*cos(2πt/T) -> eased, then ^1.5 for softer peaks
+    const phase = (t % CONFIG.gustPeriod) / CONFIG.gustPeriod;
+    return Math.pow(0.5 - 0.5 * Math.cos(phase * Math.PI * 2), 1.5);
+  }
+
+  function loop(now) {
+    const dt = Math.min(32, now - last); // clamp big jumps
+    last = now;
+
+    // Motion trails: draw a translucent rect to gently fade the previous frame
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = `rgba(0,0,0,${CONFIG.fade})`;
+    ctx.fillRect(0, 0, W, H);
+
+    // Draw particles
+    const gust = gustFactor(now) * CONFIG.gustAmp;
+    const wind = CONFIG.baseWind + gust; // px/ms
+    ctx.fillStyle = CONFIG.color;
+    ctx.shadowColor = CONFIG.color;
+    ctx.shadowBlur = CONFIG.shadowBlur;
+
+    for (let p of particles) {
+      // Local flow adds gentle curvature; depends on y and time
+      const flow = Math.sin((p.y * 0.02) + (now * 0.001 + p.seed)) * 0.08;
+      const vx = (wind + flow) * dt; // horizontal drift
+      const vy = Math.cos((p.x * 0.015) + (now * 0.0012 + p.seed)) * CONFIG.verticalDrift * dt;
+
+      p.x += vx;
+      p.y += vy;
+
+      // Wrap around edges for continuous stream
+      if (p.x > W + 10) p.x = -10;
+      if (p.y > H + 10) p.y = -10;
+      if (p.y < -10) p.y = H + 10;
+
+      ctx.globalAlpha = p.alpha;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(loop);
+  }
+
+  // Pause when tab is hidden to save battery
+  let raf;
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) cancelAnimationFrame(raf);
+    else { last = performance.now(); raf = requestAnimationFrame(loop); }
+  });
+
+  window.addEventListener('resize', resize, { passive: true });
+  resize();
+  last = performance.now();
+  raf = requestAnimationFrame(loop);
+
+  // Optional: expose a tiny API to tweak wind at runtime
+  window.WindFX = {
+    setStrength(n) { CONFIG.baseWind = Math.max(0, n); },
+    setDensity(n) {
+      CONFIG.density = Math.max(0, n);
+      particles = buildParticles(Math.floor((W * H) / 1000 * CONFIG.density));
+    },
+    setColor(c) { CONFIG.color = c; }
+  };
+})();
+</script>
+
 <!--
 	Big Picture by HTML5 UP
 	html5up.net | @ajlkn
