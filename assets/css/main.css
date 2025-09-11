@@ -375,6 +375,28 @@ input, select, textarea {
 		}
 	}
 
+/* Wind overlay only for the intro (hero) section */
+#intro { position: relative; }
+
+/* Layer order: background (z=0) < wind (z=1) < content (z=2) */
+#intro .wind-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none; /* never block clicks */
+}
+
+#intro .content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  #intro .wind-layer { display: none; }
+}
+
+
 	@-ms-keyframes overlay-hide {
 		0% {
 			opacity: 1;
