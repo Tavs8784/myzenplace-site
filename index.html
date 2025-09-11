@@ -348,17 +348,15 @@
     <li><input type="submit" value="Send Message"></li>
   </ul>
 </form>
-<p>Prefer email? 
-  <a id="support-link">support@my-zen-place.com</a>
-</p>
+<p>Prefer email? <a id="support-email" href="mailto:taokilltime@gmail.com">support@my-zen-place.com</a></p>
 <script>
-  // base64('taokilltime@gmail.com') -> 'dGFva2lsbHRpbWVAZ21haWwuY29t'
-  const target = atob('dGFva2lsbHRpbWVAZ21haWwuY29t');
-  const a = document.getElementById('support-link');
-  a.href = 'mailto:' + target + '?subject=My%20Zen%20Place%20Support';
-  a.setAttribute('rel','noopener');
+  const local = 'support';
+  const domain = 'my-zen-place.com';
+  const el = document.getElementById('support-email');
+  const addr = `${local}@${domain}`;
+  el.textContent = addr;
+  el.href = `mailto:${addr}?subject=My%20Zen%20Place%20Support`;
 </script>
-
 
 
 
