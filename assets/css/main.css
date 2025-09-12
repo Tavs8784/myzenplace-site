@@ -1320,6 +1320,7 @@ input, select, textarea {
 			cursor: default;
 			z-index: 1;
 			font-size: 0.9em;
+            opacity: 0;
 		}
 
 		.poptrox-popup .nav-next,
