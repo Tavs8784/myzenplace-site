@@ -1,5 +1,12 @@
+
+
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
 @import url("fontawesome-all.min.css");
+
+
+:root {
+	--store-badge-size: 2.6em;
+}
 
 /*
 	Big Picture by HTML5 UP
@@ -1868,7 +1875,7 @@ input, select, textarea {
                top: 0;
                width: 100%;
                background: rgba(255, 255, 255, 0.95);
-               height: 3em;
+               height: calc(var(--store-badge-size) + 0.9em);
                display: flex;
                align-items: center;
                box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
@@ -1933,7 +1940,7 @@ input, select, textarea {
                }
 
                #header .store-links img {
-                       height: 1.8em;
+                       height: var(--store-badge-size);
                        width: auto;
                        align-items: center;
                }
@@ -1963,7 +1970,7 @@ input, select, textarea {
 		}
 
 	body {
-		padding-top: 3em;
+		padding-top: calc(var(--store-badge-size) + 0.9em);
 	}
 
 		@media screen and (max-width: 736px) {
@@ -2383,3 +2390,7 @@ input, select, textarea {
         opacity: 0.8;
         margin-top: 0.75rem;
       }
+
+@media screen and (max-width: 736px) {
+  :root { --store-badge-size: 2.2em; }
+}
