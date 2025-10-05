@@ -1,10 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,900");
 @import url("fontawesome-all.min.css");
 
-:root {
-	--store-badge-size: 2.6em;
-}
-
 /*
 	Big Picture by HTML5 UP
 	html5up.net | @ajlkn
@@ -1872,7 +1868,7 @@ input, select, textarea {
                top: 0;
                width: 100%;
                background: rgba(255, 255, 255, 0.95);
-		   height: calc(var(--store-badge-size) + 0.9em);
+               height: 3em;
                display: flex;
                align-items: center;
                box-shadow: 0 0 0.15em 0 rgba(0, 0, 0, 0.1);
@@ -1937,7 +1933,7 @@ input, select, textarea {
                }
 
                #header .store-links img {
-			   var(--store-badge-size);
+                       height: 1.8em;
                        width: auto;
                        align-items: center;
                }
@@ -1967,7 +1963,7 @@ input, select, textarea {
 		}
 
 	body {
-		padding-top: calc(var(--store-badge-size) + 0.9em);
+		padding-top: 3em;
 	}
 
 		@media screen and (max-width: 736px) {
@@ -2387,7 +2383,3 @@ input, select, textarea {
         opacity: 0.8;
         margin-top: 0.75rem;
       }
-@media screen and (max-width: 736px) {
-	:root { --store-badge-size: 2.2em; }
-}
-	  
