@@ -1928,16 +1928,24 @@ input, select, textarea {
   min-width: 0;
                }
 
-               #header .store-links {
-                       display: flex;
-                       align-items: center;
-                        margin-top: 0.5rem;
-               }
+#header .store-links {                /* applies to BOTH nested wrappers */
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: nowrap;                   /* never stack */
+}
 
-               #header .store-links a {
-                       display: inline-block;
-                       margin-left: 0.5rem;
-               }
+#header .store-links a {
+	display: inline-flex;                /* kill baseline drift */
+	line-height: 0;
+}
+
+#header .store-links img {
+	display: block;                      /* remove inline gaps */
+	height: var(--store-badge-size);     /* same visual height */
+	width: auto;                         /* keep aspect */
+	object-fit: contain;
+}
 
 /* === Uniform Store Badges === */
 :root {
@@ -2437,6 +2445,5 @@ body {
         margin-top: 0.75rem;
       }
 
-@media screen and (max-width: 736px) {
-  :root { --store-badge-size: 2.2em; }
-}
+:root { --store-badge-size: 56px; }
+@media (max-width: 736px) { :root { --store-badge-size: 44px; } }
