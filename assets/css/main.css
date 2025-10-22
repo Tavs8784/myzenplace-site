@@ -579,7 +579,7 @@ input, select, textarea {
 
 			
 
-		}
+		
 
 		@media screen and (max-width: 736px) {
 
@@ -1939,12 +1939,57 @@ input, select, textarea {
                        margin-left: 0.5rem;
                }
 
-               #header .store-links img {
-                       height: var(--store-badge-size);
-                       width: calc(var(--store-badge-size) * 3.4);
-                       object-fit: contain;
-                       align-items: center;
-               }
+/* === Uniform Store Badges === */
+:root {
+	--badge-h: 56px; /* frame height */
+	--badge-ratio: 3.4; /* width : height (works for both with letterbox if needed) */
+	--badge-gap: 8px; /* spacing between badges */
+}
+
+
+/* Header row that holds the badges */
+#header .store-row {
+	display: flex;
+	align-items: center;
+	gap: var(--badge-gap);
+}
+
+
+/* Each badge is a fixed-size frame; images scale inside without layout jitter */
+#header .store-badge {
+	display: inline-flex; /* kills baseline drift */
+	align-items: center;
+	justify-content: center;
+	height: var(--badge-h);
+	width: calc(var(--badge-h) * var(--badge-ratio));
+	line-height: 0; /* removes stray descender whitespace */
+}
+
+
+#header .store-badge img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain; /* preserves logo aspect inside frame */
+	display: block; /* removes inline gap */
+}
+
+
+/* Make header height match the badge frames exactly (+ a little breathing room) */
+#header {
+	height: calc(var(--badge-h) + 14px);
+}
+
+
+/* Body offset for the fixed header */
+body {
+	padding-top: calc(var(--badge-h) + 14px);
+}
+
+
+/* Responsive tweak: slightly smaller badges on narrow screens */
+@media (max-width: 736px) {
+	:root { --badge-h: 44px; }
+}
 
 		@media screen and (max-width: 736px) {
 
