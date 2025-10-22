@@ -40,13 +40,14 @@ body {
 	line-height: 1;
 }
 /* Center + slightly expand tracking for the "use-cases" H2 only */
-#one h2#use-cases #offline #asmr{
+h2#use-cases,
+h2#offline,
+h2#asmr {
 	text-align: center;
-	letter-spacing: 0.01em; /* ~1–1.5px depending on font size */
+	letter-spacing: 0.01em;
 	display: block;
 	width: 100%;
 }
-
 /* Tweak for small screens (optional) */
 @media (max-width: 550px) {
 	#one h2#use-cases {
