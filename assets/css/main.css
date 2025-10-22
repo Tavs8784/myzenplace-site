@@ -2444,6 +2444,8 @@ body {
         opacity: 0.8;
         margin-top: 0.75rem;
       }
+#header .branding { gap: 20px; }   /* title ↔ badges */
+#header .store-row { gap: 10px; }  /* badge ↔ badge */
 
 :root { --store-badge-size: 56px; }
 @media (max-width: 736px) { :root { --store-badge-size: 44px; } }
