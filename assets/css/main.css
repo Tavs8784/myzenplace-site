@@ -1949,7 +1949,7 @@ input, select, textarea {
 
 /* === Uniform Store Badges === */
 :root {
-	--badge-h: 12px; /* frame height */
+	--badge-h: 56px; /* frame height */
 	--badge-ratio: 3.4; /* width : height (works for both with letterbox if needed) */
 	--badge-gap: 8px; /* spacing between badges */
 }
