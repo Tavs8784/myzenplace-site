@@ -42,7 +42,7 @@ body {
 /* Center + slightly expand tracking for the "use-cases" H2 only */
 h2#use-cases,
 h2#offline,
-h2#asmr
+h2#asmr,
 h2#no_ads{
 	text-align: center;
 	letter-spacing: 0.01em;
