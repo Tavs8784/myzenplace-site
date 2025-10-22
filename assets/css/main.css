@@ -1975,8 +1975,8 @@ input, select, textarea {
 
 
 #header .store-badge img {
-	width: 130%;
-	height: 130%;
+	width: 115%;
+	height: 115%;
 	object-fit: contain; /* preserves logo aspect inside frame */
 	display: block; /* removes inline gap */
 }
