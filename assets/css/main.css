@@ -1583,8 +1583,24 @@ input, select, textarea {
 				-ms-transition-delay: 0.35s;
 				transition-delay: 0.35s;
 			}
+/* Center + slightly expand tracking for the "use-cases" H2 only */
+#one h2#use-cases {
+	text-align: center;
+	letter-spacing: 0.04em; /* ~1–1.5px depending on font size */
+	display: block;
+	width: 100%;
+}
 
-			.gallery article:nth-last-child(8n) {
+/* Tweak for small screens (optional) */
+@media (max-width: 550px) {
+	#one h2#use-cases {
+		letter-spacing: 0.03em;
+		line-height: 1.25;
+	}
+}
+
+
+.gallery article:nth-last-child(8n) {
 				-moz-transition-delay: 0.35s;
 				-webkit-transition-delay: 0.35s;
 				-ms-transition-delay: 0.35s;
