@@ -1968,15 +1968,15 @@ input, select, textarea {
 	display: inline-flex; /* kills baseline drift */
 	align-items: center;
 	justify-content: center;
-	height: var(--badge-h);
-	width: calc(var(--badge-h) * var(--badge-ratio));
+	height: calc(var(--badge-h) * 0.5);
+	width:  calc(var(--badge-h) * 0.5 * var(--badge-ratio));
 	line-height: 0; /* removes stray descender whitespace */
 }
 
 
 #header .store-badge img {
-	width: 50%;
-	height: 50%;
+	width: 100%;
+	height: 100%;
 	object-fit: contain; /* preserves logo aspect inside frame */
 	display: block; /* removes inline gap */
 }
