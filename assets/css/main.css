@@ -2471,6 +2471,19 @@ body {
 color: rgba(247, 230, 197, 1);
 }
 
+#subtitle {
+	text-shadow:
+			0 2px 10px rgba(0, 0, 0, 0.55), /* soft blur to separate from busy bg */
+			0 1px 0 rgba(0, 0, 0, 0.30);    /* tiny crisp edge for readability */
+	color: rgba(247, 230, 197, 1);
+}
+@media (max-width: 736px){
+	#subtitle {
+		text-shadow:
+				0 1px 6px rgba(0, 0, 0, 0.50),
+				0 1px 0 rgba(0, 0, 0, 0.25);
+	}
+}
 /* Slightly lighter on small screens */
 @media (max-width: 736px) {
 	#intro header h2 {
