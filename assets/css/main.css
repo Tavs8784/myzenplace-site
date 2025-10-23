@@ -1987,8 +1987,8 @@ input, select, textarea {
 	display: inline-flex; /* kills baseline drift */
 	align-items: center;
 	justify-content: center;
-	height: calc(var(--badge-h) * 0.6);
-	width:  calc(var(--badge-h) * 0.6 * var(--badge-ratio));
+	height: calc(var(--badge-h) * 0.75);
+	width:  calc(var(--badge-h) * 0.75 * var(--badge-ratio));
 	line-height: 0; /* removes stray descender whitespace */
 }
 
