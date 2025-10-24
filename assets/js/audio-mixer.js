@@ -42,3 +42,8 @@
     Object.values(sounds).forEach(a => a.muted = isMuted);
     muteToggle.textContent = isMuted ? '🔊 Unmute' : '🔇 Mute';
 });
+    // Volume control
+    volumeSlider.addEventListener('input', e => {
+        const vol = parseFloat(e.target.value);
+        Object.values(sounds).forEach(a => a.volume = vol);
+    });
