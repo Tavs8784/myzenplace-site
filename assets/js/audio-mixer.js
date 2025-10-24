@@ -14,6 +14,7 @@
 
     const buttons = document.querySelectorAll('.sound-btn');
     const muteToggle = document.getElementById('mute-toggle');
+    const volumeSlider = document.getElementById('volume-slider');
     let isMuted = false;
 
     // Button toggle logic
