@@ -13,7 +13,6 @@
 });
 
     const buttons = document.querySelectorAll('.sound-btn');
-    const muteToggle = document.getElementById('mute-toggle');
     const volumeSlider = document.getElementById('volume-slider');
     let isMuted = false;
 
@@ -37,12 +36,8 @@
     });
 });
 
-    // Mute toggle
-    muteToggle.addEventListener('click', () => {
-    isMuted = !isMuted;
-    Object.values(sounds).forEach(a => a.muted = isMuted);
-    muteToggle.textContent = isMuted ? '🔊 Unmute' : '🔇 Mute';
-});
+
+
     // Volume control
     volumeSlider.addEventListener('input', e => {
         const vol = parseFloat(e.target.value);
