@@ -1,9 +1,9 @@
     // assets/js/audio-mixer.js
     const sounds = {
-    ambiance: new Audio('assets/audio/Sound_Ambiance_Day.mp3'),
-    rain: new Audio('assets/audio/Sound_Ambiance_rain.wav'),
-    birds: new Audio('assets/audio/Sound_Birds.mp3'),
-    wind: new Audio('assets/audio/Sound_Wind.mp3')
+    ambiance: new Audio('audio/Sound_Ambiance_Day.mp3'),
+    rain: new Audio('audio/Sound_Ambiance_rain.wav'),
+    birds: new Audio('audio/Sound_Birds.mp3'),
+    wind: new Audio('audio/Sound_Wind.mp3')
 };
 
     // Enable looping
