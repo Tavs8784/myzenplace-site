@@ -2558,7 +2558,7 @@ color: rgba(247, 230, 197, 1);
 
 .mixer-buttons {
 	display: flex;
-	gap: 0.75em;
+	gap: 0.5em;
 	flex-wrap: wrap;
 	justify-content: center;
 }
@@ -2585,11 +2585,13 @@ color: rgba(247, 230, 197, 1);
 
 @media (max-width: 600px) {
 	.mixer-buttons {
-		gap: 0.5em;
+		gap: 0.4em;
 	}
 	.sound-btn, #mute-toggle {
-		font-size: 0.9em;
-		padding: 0.5em 0.75em;
+		font-size: 0.85em;
+		min-width: 85px;
+		max-width: 85px;
+		padding: 0.35em 0;
 	}
 }
 #volume-slider {
