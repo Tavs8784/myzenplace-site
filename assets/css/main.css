@@ -2541,11 +2541,10 @@ color: rgba(247, 230, 197, 1);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height: 6em;
 	justify-content: center;
-	margin-top: 1.5em;
-	padding: 1em;
-	background: rgba(255, 255, 255, 0.08);
+
+	padding: 0.3em;
+	background: rgba(255, 255, 255, 0.2);
 	border-radius: 1em;
 	backdrop-filter: blur(6px);
 }
