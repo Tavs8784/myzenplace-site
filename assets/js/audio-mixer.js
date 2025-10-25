@@ -1,4 +1,3 @@
-// Detect time of day for ambiance sound
 const hour = new Date().getHours();
 const ambianceFile = (hour >= 21 || hour < 6)
     ? 'assets/audio/Sound_Ambiance_Night.mp3'
@@ -32,17 +31,15 @@ buttons.forEach(btn => {
             sound.volume = globalVolume;
             sound.play();
             btn.classList.add('active');
-            btn.textContent = btn.textContent.replace('⏹', '').trim() + ' ⏹'; // show stop icon
         } else {
             sound.pause();
             sound.currentTime = 0;
             btn.classList.remove('active');
-            btn.textContent = btn.textContent.replace('⏹', '').trim(); // remove icon
         }
     });
 });
 
-
+// Mute toggle
 
 // Volume control — affects current and future sounds
 volumeSlider.addEventListener('input', e => {
