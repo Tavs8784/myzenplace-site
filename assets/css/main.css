@@ -2702,12 +2702,12 @@ color: rgba(247, 230, 197, 1);
 	padding: 0.4em 0.6em;
 	border-radius: 12px;
 	min-width: 70px;
-	background-color: #568C20;
+	background-color: #f2af5c;
 	color: white;
 }
 
 .sound-btn.active {
-	background-color: #a6d79b;
+	background-color: #bf681b;
 }
 
 .volume-control {
