@@ -2657,6 +2657,49 @@ color: rgba(247, 230, 197, 1);
 		text-indent: 0;
 	}
 }
+/* Compact audio mixer layout for mobile */
+@media (max-width: 768px) {
+	#audio-mixer,
+	.audio-mixer {
+		width: 100%;
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 0.8em 1em;
+		box-sizing: border-box;
+	}
+
+	.audio-mixer h3 {
+		font-size: 1em;
+		margin-bottom: 0.4em;
+	}
+
+	.mixer-buttons {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		gap: 0.4em;
+	}
+
+	.sound-btn {
+		font-size: 1.2em;         /* smaller emoji/text */
+		padding: 0.3em 0.5em;
+		border-radius: 12px;
+		min-width: 60px;
+	}
+
+	.volume-control {
+		margin-top: 0.6em;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.4em;
+	}
+
+	#volume-slider {
+		width: 70%;
+	}
+}
+
 
 
 #header .branding { gap: 20px; }   /* title ↔ badges */
