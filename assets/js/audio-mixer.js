@@ -62,4 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
         Object.entries(sounds).forEach(([key, audio]) => {
             if (!audio.paused) audio.volume = computeVolume(key);
         });
-    })}
+    });
+
+
+// Auto-start Birds at 1.0 on first load (more present by default)
+    const birdsBtn = document.querySelector('.sound-btn[data-sound="birds"]');
+    if (birdsBtn) birdsBtn.classList.add('active');
+    const birds = sounds.birds;
+    birds.volume = 1.0;
+});
