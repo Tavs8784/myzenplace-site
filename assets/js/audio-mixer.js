@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const relaxButtons = document.getElementById('relax-buttons');
     const relaxBtn = document.getElementById('relax-btn');
     const buttons = document.querySelectorAll('.sound-btn');
-    const mixer = document.getElementById('audio-mixer');
 
     // Detect day/night for ambiance
     const hour = new Date().getHours();
@@ -21,12 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         wind: new Audio('assets/audio/Sound_Wind.mp3'),
         relax: new Audio('assets/audio/Sound_RelaxMusic_4.wav'),
     };
-    function beginSwitch() {
-        mixer.classList.add('switching');
-        // keep the "no-anim" window just a hair longer than the fade
-        setTimeout(() => mixer.classList.remove('switching'), 160);
-    }
-    
 
     Object.values(sounds).forEach(a => { a.loop = true; a.volume = 0.7; });
 
@@ -86,19 +79,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mode toggles
     asmrToggle.addEventListener('click', () => {
         stopAll();
-        beginSwitch();
         asmrToggle.classList.add('active');
         relaxToggle.classList.remove('active');
-        asmrButtons.classList.remove('hidden');   // fade IN
-        relaxButtons.classList.add('hidden');     // fade OUT
+        asmrButtons.classList.remove('hidden');
+        relaxButtons.classList.add('hidden');
     });
+
 
     relaxToggle.addEventListener('click', () => {
         stopAll();
-        beginSwitch();
         relaxToggle.classList.add('active');
         asmrToggle.classList.remove('active');
-        asmrButtons.classList.add('hidden');      // fade OUT
-        relaxButtons.classList.remove('hidden');  // fade IN
+        asmrButtons.classList.add('hidden');
+        relaxButtons.classList.remove('hidden');
     });
 });
