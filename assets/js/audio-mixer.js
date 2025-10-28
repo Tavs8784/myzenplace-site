@@ -81,15 +81,15 @@ document.addEventListener('DOMContentLoaded', () => {
         stopAll();
         asmrToggle.classList.add('active');
         relaxToggle.classList.remove('active');
-        asmrButtons.classList.add('hidden');
-        relaxButtons.classList.remove('hidden');
+        asmrButtons.style.display = 'flex';
+        relaxButtons.style.display = 'none';
     });
 
     relaxToggle.addEventListener('click', () => {
         stopAll();
         relaxToggle.classList.add('active');
         asmrToggle.classList.remove('active');
-        asmrButtons.classList.add('hidden');
-        relaxButtons.classList.remove('hidden');
+        asmrButtons.style.display = 'none';
+        relaxButtons.style.display = 'flex';
     });
 });
