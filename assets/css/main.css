@@ -2568,7 +2568,7 @@ color: rgba(247, 230, 197, 1);
 	color: #fff;
 	border: none;
 	padding: 0.6em 1em;
-	border-radius: 0.75em;
+	border-radius: 0.5em;
 	font-size: 1em;
 	cursor: pointer;
 	transition: all 0.2s ease;
