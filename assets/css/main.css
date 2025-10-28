@@ -2628,6 +2628,35 @@ color: rgba(247, 230, 197, 1);
 	gap: 0.5em;
 	justify-content: center;
 }
+/* Hide text labels in sound buttons on small screens */
+@media (max-width: 768px) {
+	.sound-btn {
+		font-size: 1.8em; /* make the icons a bit larger */
+		padding: 0.4em 0.5em;
+	}
+
+	/* Hide text but keep emoji/icon centered */
+	.sound-btn::after {
+		content: "";
+	}
+
+	/* Remove any leftover text */
+	.sound-btn {
+		overflow: hidden;
+		text-indent: -9999px; /* hide text visually */
+		position: relative;
+	}
+
+	/* Restore emoji visibility */
+	.sound-btn::before {
+		content: attr(data-icon);
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		text-indent: 0;
+	}
+}
 
 
 #header .branding { gap: 20px; }   /* title ↔ badges */
