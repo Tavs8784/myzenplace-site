@@ -2771,6 +2771,43 @@ color: rgba(247, 230, 197, 1);
 		padding: 0.35em 0.8em;
 	}
 }
+.mixer-modes {
+	display: flex;
+	justify-content: center;
+	gap: 1em;
+	margin-bottom: 0.6em;
+}
+
+/* clickable text links */
+.mode-link {
+	font-weight: 600;
+	color: #ffffffcc;
+	cursor: pointer;
+	border: none;
+	background: none;
+	font-size: 1em;
+	text-decoration: underline;
+	text-underline-offset: 4px;
+	transition: color 0.3s, text-decoration-color 0.3s;
+}
+
+.mode-link:hover {
+	color: #ffffff;
+	text-decoration-color: #9ad28a;
+}
+
+.mode-link.active {
+	color: #9ad28a;
+	text-decoration: none;
+	pointer-events: none; /* makes the active one inert */
+}
+
+/* Compact variant for phones */
+@media (max-width: 768px) {
+	.mode-link {
+		font-size: 0.95em;
+	}
+}
 
 
 
