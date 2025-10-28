@@ -2598,6 +2598,38 @@ color: rgba(247, 230, 197, 1);
 	width: 120px;
 }
 
+/* Sound button styling */
+.sound-btn {
+	background-color: #F2B05E;
+	color: #fff;
+	border: none;
+	border-radius: 2em;
+	padding: 0.6em 1.4em;
+	font-size: 1em;
+	cursor: pointer;
+	transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+/* Hover + active visual feedback */
+.sound-btn:hover {
+	background-color: #e09a45;
+}
+
+.sound-btn:active,
+.sound-btn.active {
+	background-color: #8C4E18;
+	transform: scale(0.96);
+}
+
+/* Optional: spacing between buttons */
+.mixer-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	justify-content: center;
+}
+
+
 #header .branding { gap: 20px; }   /* title ↔ badges */
 #header .store-row { gap: 10px; }  /* badge ↔ badge */
 
