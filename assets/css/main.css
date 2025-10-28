@@ -2538,15 +2538,15 @@ color: rgba(247, 230, 197, 1);
 
 
 .audio-mixer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin-top: 0.5em;
-	padding: 0.2em;
-	background: rgba(255, 255, 255, 0.15);
+	width: 100%;
+	max-width: 720px; /* match video width */
+	margin: 1em auto;
+	padding: 1em 1.5em;
 	border-radius: 1em;
-	backdrop-filter: blur(6px);
+	background: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(12px);
+	box-sizing: border-box;
+	text-align: center;
 }
 
 .audio-mixer h3 {
@@ -2558,29 +2558,30 @@ color: rgba(247, 230, 197, 1);
 
 .mixer-buttons {
 	display: flex;
-	gap: 0.5em;
-	flex-wrap: wrap;
 	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0.5em;
+	margin: 0.8em 0;
 }
 
 .sound-btn, #mute-toggle {
-	background: rgba(255, 255, 255, 0.15);
+	font-size: 1.1em;
+	padding: 0.5em 0.9em;
+	border-radius: 2em;
+	min-width: 90px;
+	background-color: #F2C166; /* idle */
 	color: #fff;
 	border: none;
-	padding: 0.6em 1em;
-	border-radius: 0.3em;
-	font-size: 1em;
 	cursor: pointer;
-	transition: all 0.2s ease;
+	font-weight: 600;
+	transition: background-color 0.25s ease, transform 0.1s ease;
 }
 
 .sound-btn:hover, #mute-toggle:hover {
-	background: rgba(255, 255, 255, 0.3);
-}
+	transform: scale(1.05);}
 
 .sound-btn.active {
-	background: #568C20;
-	color: #fff;
+	background-color: #BF681B; /* playing */
 }
 
 @media (max-width: 600px) {
@@ -2659,44 +2660,22 @@ color: rgba(247, 230, 197, 1);
 }
 /* Compact audio mixer layout for mobile */
 @media (max-width: 768px) {
-	#audio-mixer,
+
 	.audio-mixer {
-		width: 100%;
 		max-width: 100%;
-		margin: 0 auto;
-		padding: 0.8em 1em;
-		box-sizing: border-box;
+		padding: 0.8em;
 	}
 
-	.audio-mixer h3 {
-		font-size: 1em;
-		margin-bottom: 0.4em;
-	}
-
-	.mixer-buttons {
-		display: flex;
-		justify-content: space-around;
-		flex-wrap: wrap;
-		gap: 0.4em;
-	}
 
 	.sound-btn {
-		font-size: 1.2em;         /* smaller emoji/text */
-		padding: 0.3em 0.5em;
-		border-radius: 12px;
-		min-width: 60px;
+		font-size: 1em;
+		min-width: 70px;
+		padding: 0.4em 0.6em;
 	}
 
-	.volume-control {
-		margin-top: 0.6em;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 0.4em;
-	}
 
-	#volume-slider {
-		width: 70%;
+	.mode-link {
+		font-size: 0.95em;
 	}
 }
 .audio-mixer {
@@ -2709,9 +2688,8 @@ color: rgba(247, 230, 197, 1);
 .mixer-modes {
 	display: flex;
 	justify-content: center;
-	gap: 0.5em;
+	gap: 1em;
 	margin-bottom: 0.6em;
-}
 
 .mode-btn {
 	background-color: #4a6a3d;
@@ -2783,21 +2761,18 @@ color: rgba(247, 230, 197, 1);
 	font-weight: 600;
 	color: #ffffffcc;
 	cursor: pointer;
-	border: none;
-	background: none;
 	font-size: 1em;
 	text-decoration: underline;
 	text-underline-offset: 4px;
-	transition: color 0.3s, text-decoration-color 0.3s;
+	transition: color 0.3s ease;
 }
 
 .mode-link:hover {
 	color: #ffffff;
-	text-decoration-color: #9ad28a;
 }
 
 .mode-link.active {
-	color: #9ad28a;
+	color: #F2C166;
 	text-decoration: none;
 	pointer-events: none; /* makes the active one inert */
 }
