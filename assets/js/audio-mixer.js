@@ -1,9 +1,13 @@
-// assets/js/audio-mixer.js
 document.addEventListener('DOMContentLoaded', () => {
     const volumeSlider = document.getElementById('volume-slider');
+    const asmrToggle = document.getElementById('asmr-toggle');
+    const relaxToggle = document.getElementById('relax-toggle');
+    const asmrButtons = document.getElementById('asmr-buttons');
+    const relaxButtons = document.getElementById('relax-buttons');
+    const relaxBtn = document.getElementById('relax-btn');
     const buttons = document.querySelectorAll('.sound-btn');
 
-    // Day/Night ambiance
+    // Detect day/night for ambiance
     const hour = new Date().getHours();
     const ambianceFile = (hour >= 21 || hour < 6)
         ? 'assets/audio/Sound_Ambiance_Night.mp3'
@@ -14,23 +18,30 @@ document.addEventListener('DOMContentLoaded', () => {
         rain: new Audio('assets/audio/Sound_Ambiance_rain.wav'),
         birds: new Audio('assets/audio/Sound_Birds.mp3'),
         wind: new Audio('assets/audio/Sound_Wind.mp3'),
+        relax: new Audio('assets/audio/Sound_RelaxMusic_4.wav'),
     };
 
-    // Defaults
     Object.values(sounds).forEach(a => { a.loop = true; a.volume = 0.7; });
 
-    // Ensure idle UI on load
-    buttons.forEach(b => b.classList.remove('active'));
-
-    // Slider baseline (0..1)
     let sliderRaw = parseFloat(volumeSlider?.value || '0.7');
-
-    // Birds can reach 1.0, others cap at 0.7 (your earlier rule)
     const capFor = key => (key === 'birds' ? 1.0 : 0.7);
     const volumeFor = key => Math.min(1, Math.max(0, sliderRaw * capFor(key)));
 
-    // Toggle buttons
-    buttons.forEach(btn => {
+    const stopAll = () => {
+        Object.values(sounds).forEach(a => { a.pause(); a.currentTime = 0; });
+        buttons.forEach(b => b.classList.remove('active'));
+    };
+
+    // Volume control
+    volumeSlider?.addEventListener('input', e => {
+        sliderRaw = parseFloat(e.target.value) || 0;
+        Object.entries(sounds).forEach(([key, audio]) => {
+            if (!audio.paused) audio.volume = volumeFor(key);
+        });
+    });
+
+    // ASMR buttons
+    asmrButtons.querySelectorAll('.sound-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const key = btn.dataset.sound;
             const audio = sounds[key];
@@ -44,16 +55,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 audio.volume = volumeFor(key);
                 audio.play()
                     .then(() => btn.classList.add('active'))
-                    .catch(() => { btn.classList.remove('active'); });
+                    .catch(() => btn.classList.remove('active'));
             }
         });
     });
 
-    // Global volume control
-    volumeSlider?.addEventListener('input', e => {
-        sliderRaw = parseFloat(e.target.value) || 0;
-        Object.entries(sounds).forEach(([key, audio]) => {
-            if (!audio.paused) audio.volume = volumeFor(key);
-        });
+    // Relax button
+    relaxBtn.addEventListener('click', () => {
+        const relaxAudio = sounds.relax;
+        if (relaxBtn.classList.contains('active')) {
+            relaxAudio.pause();
+            relaxAudio.currentTime = 0;
+            relaxBtn.classList.remove('active');
+        } else {
+            stopAll();
+            relaxAudio.volume = sliderRaw;
+            relaxAudio.play()
+                .then(() => relaxBtn.classList.add('active'))
+                .catch(() => relaxBtn.classList.remove('active'));
+        }
+    });
+
+    // Mode toggles
+    asmrToggle.addEventListener('click', () => {
+        stopAll();
+        asmrToggle.classList.add('active');
+        relaxToggle.classList.remove('active');
+        asmrButtons.style.display = 'flex';
+        relaxButtons.style.display = 'none';
+    });
+
+    relaxToggle.addEventListener('click', () => {
+        stopAll();
+        relaxToggle.classList.add('active');
+        asmrToggle.classList.remove('active');
+        asmrButtons.style.display = 'none';
+        relaxButtons.style.display = 'flex';
     });
 });

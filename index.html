@@ -112,19 +112,28 @@
 			</video>
 			<p id="videoFallbackLink" class="video-caption" style="display:none;">Having trouble? <a href="videos/my-zen-place.mp4" target="_blank" rel="noopener">Open the MP4 directly</a>.</p>
 			<div id="audio-mixer" class="audio-mixer">
-				<h3>Try Layered ASMR</h3>
-				<div class="mixer-buttons">
+				<div class="mixer-modes">
+					<button id="asmr-toggle" class="mode-btn active">Try Layered ASMR</button>
+					<button id="relax-toggle" class="mode-btn">Try Relax Mode</button>
+				</div>
+
+				<div class="mixer-buttons" id="asmr-buttons">
 					<button class="sound-btn" data-sound="ambiance" data-icon="🌿">🌿 Ambiance</button>
 					<button class="sound-btn" data-sound="rain" data-icon="🌧">🌧 Rain</button>
 					<button class="sound-btn" data-sound="birds" data-icon="🐦">🐦 Birds</button>
 					<button class="sound-btn" data-sound="wind" data-icon="💨">💨 Wind</button>
-
 				</div>
+
+				<div class="mixer-buttons" id="relax-buttons" style="display:none;">
+					<button id="relax-btn" class="sound-btn" data-sound="relax">🪷 Relax</button>
+				</div>
+
 				<div class="volume-control">
 					<label for="volume-slider">🔊</label>
 					<input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7">
 				</div>
 			</div>
+
 			<footer>
 				<a href="#one" class="button style2 down">Next</a>
 			</footer>

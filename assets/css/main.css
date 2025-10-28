@@ -2699,6 +2699,78 @@ color: rgba(247, 230, 197, 1);
 		width: 70%;
 	}
 }
+.audio-mixer {
+	text-align: center;
+	margin: 1em auto;
+	padding: 1em;
+	max-width: 480px;
+}
+
+.mixer-modes {
+	display: flex;
+	justify-content: center;
+	gap: 0.5em;
+	margin-bottom: 0.6em;
+}
+
+.mode-btn {
+	background-color: #4a6a3d;
+	border: none;
+	padding: 0.4em 0.9em;
+	border-radius: 2em;
+	color: #fff;
+	font-weight: 600;
+	cursor: pointer;
+	font-size: 0.9em;
+}
+
+.mode-btn.active {
+	background-color: #86b085;
+}
+
+.mixer-buttons {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 0.4em;
+	margin-bottom: 0.6em;
+}
+
+.sound-btn {
+	font-size: 1.1em;
+	padding: 0.4em 0.6em;
+	border-radius: 12px;
+	min-width: 70px;
+	background-color: #568C20;
+	color: white;
+}
+
+.sound-btn.active {
+	background-color: #a6d79b;
+}
+
+.volume-control {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.4em;
+}
+
+/* Compact mobile layout */
+@media (max-width: 768px) {
+	.audio-mixer {
+		padding: 0.6em;
+	}
+	.sound-btn {
+		font-size: 1em;
+		padding: 0.3em 0.5em;
+		min-width: 60px;
+	}
+	.mode-btn {
+		font-size: 0.85em;
+		padding: 0.35em 0.8em;
+	}
+}
 
 
 
