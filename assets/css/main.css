@@ -2783,6 +2783,31 @@ color: rgba(247, 230, 197, 1);
 		font-size: 0.95em;
 	}
 }
+	/* Prevent jump when toggling modes */
+	.audio-mixer {
+		position: relative;
+		min-height: 180px; /* enough for 4 buttons + slider */
+		transition: min-height 0.3s ease;
+	}
+
+	@media (max-width: 768px) {
+		.audio-mixer {
+			min-height: 150px; /* tighter fit for mobile */
+		}
+	}
+
+	/* Optional fade for smoother feel */
+	.mixer-buttons {
+		transition: opacity 0.25s ease;
+	}
+
+	.mixer-buttons.hidden {
+		opacity: 0;
+		pointer-events: none;
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
 
 
 
