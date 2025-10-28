@@ -1,73 +1,59 @@
+// assets/js/audio-mixer.js
 document.addEventListener('DOMContentLoaded', () => {
-// Elements
     const volumeSlider = document.getElementById('volume-slider');
     const buttons = document.querySelectorAll('.sound-btn');
-    if (!volumeSlider || buttons.length === 0) return;
 
-
-// Day/Night ambiance
+    // Day/Night ambiance
     const hour = new Date().getHours();
     const ambianceFile = (hour >= 21 || hour < 6)
         ? 'assets/audio/Sound_Ambiance_Night.mp3'
         : 'assets/audio/Sound_Ambiance_Day.mp3';
 
-
-// Audio map
     const sounds = {
         ambiance: new Audio(ambianceFile),
         rain: new Audio('assets/audio/Sound_Ambiance_rain.wav'),
         birds: new Audio('assets/audio/Sound_Birds.mp3'),
-        wind: new Audio('assets/audio/Sound_Wind.mp3')
-// relax: new Audio('assets/audio/Sound_RelaxMusic_4.wav') // reserved for Relax Mode
+        wind: new Audio('assets/audio/Sound_Wind.mp3'),
     };
 
-
-// Defaults
+    // Defaults
     Object.values(sounds).forEach(a => { a.loop = true; a.volume = 0.7; });
-    let sliderRaw = parseFloat(volumeSlider.value || '0.7'); // 0..1
 
+    // Ensure idle UI on load
+    buttons.forEach(b => b.classList.remove('active'));
 
-// Per-sound cap: birds up to 1.0, others to 0.7
-    const computeVolume = (key) => {
-        const cap = (key === 'birds') ? 1.0 : 0.7;
-        const v = sliderRaw * cap;
-        return Math.max(0, Math.min(1, v));
-    };
+    // Slider baseline (0..1)
+    let sliderRaw = parseFloat(volumeSlider?.value || '0.7');
 
+    // Birds can reach 1.0, others cap at 0.7 (your earlier rule)
+    const capFor = key => (key === 'birds' ? 1.0 : 0.7);
+    const volumeFor = key => Math.min(1, Math.max(0, sliderRaw * capFor(key)));
 
-// Toggle buttons
+    // Toggle buttons
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             const key = btn.dataset.sound;
-            const sound = sounds[key];
-            if (!sound) return;
+            const audio = sounds[key];
+            if (!audio) return;
 
-
-            if (!btn.classList.contains('active')) {
-                sound.volume = computeVolume(key);
-                sound.play();
-                btn.classList.add('active');
-            } else {
-                sound.pause();
-                sound.currentTime = 0;
+            if (btn.classList.contains('active')) {
+                audio.pause();
+                audio.currentTime = 0;
                 btn.classList.remove('active');
+            } else {
+                audio.volume = volumeFor(key);
+                audio.play()
+                    .then(() => btn.classList.add('active'))
+                    .catch(() => { btn.classList.remove('active'); });
             }
         });
     });
 
-
-// Global volume slider (mutes→maxes all; max=0.7 except birds=1)
-    volumeSlider.addEventListener('input', (e) => {
-        sliderRaw = parseFloat(e.target.value) || 0; // 0..1
+    // Global volume control
+    volumeSlider?.addEventListener('input', e => {
+        sliderRaw = parseFloat(e.target.value) || 0;
         Object.entries(sounds).forEach(([key, audio]) => {
-            if (!audio.paused) audio.volume = computeVolume(key);
+            if (!audio.paused) audio.volume = volumeFor(key);
         });
     });
-
-
-// Auto-start Birds at 1.0 on first load (more present by default)
-    const birdsBtn = document.querySelector('.sound-btn[data-sound="birds"]');
-    if (birdsBtn) birdsBtn.classList.add('active');
-    const birds = sounds.birds;
-    birds.volume = 1.0;
 });
