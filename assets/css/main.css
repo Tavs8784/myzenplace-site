@@ -579,16 +579,10 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 1000px) {
-
-			body, input, textarea, select {
-				font-size: 13pt;
-				header nav { display: none; }
-			}
-
-
-
-		}
+@media screen and (max-width: 1000px) {
+	body, input, textarea, select { font-size: 13pt; }
+	header nav { display: none; }     /* ✅ moved outside */
+}
 
 		@media screen and (max-width: 850px) {
 
@@ -1390,8 +1384,6 @@ input, select, textarea {
 			-webkit-transform: scaleX(-1);
 			-ms-transform: scaleX(-1);
 			transform: scaleX(-1);
-			-ms-filter: "FlipH";
-			filter: FlipH;
 		}
 
 		.poptrox-popup .nav-next {
@@ -2539,14 +2531,18 @@ color: rgba(247, 230, 197, 1);
 
 .audio-mixer {
 	width: 100%;
-	max-width: 720px; /* match video width */
-	margin: 1em auto;
-	padding: 1em 1.5em;
-	border-radius: 1em;
-	background: rgba(255, 255, 255, 0.15);
+	max-width: none;                 /* was 720px — remove the cap */
+	margin: 1em 0 0;                 /* align with video edges (no extra centering) */
+	padding: 1rem 1.25rem;
+	border-radius: 12px;             /* match the video radius */
+	background: rgba(255,255,255,0.15);
 	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
 	box-sizing: border-box;
 	text-align: center;
+
+	/* Fixed height so it never jumps when switching modes */
+	height: 220px;
 }
 
 .audio-mixer h3 {
@@ -2678,18 +2674,14 @@ color: rgba(247, 230, 197, 1);
 		font-size: 0.95em;
 	}
 }
-.audio-mixer {
-	text-align: center;
-	margin: 1em auto;
-	padding: 1em;
-	max-width: 480px;
-}
+
 
 .mixer-modes {
 	display: flex;
 	justify-content: center;
 	gap: 1em;
 	margin-bottom: 0.6em;
+}
 
 .mode-btn {
 	background-color: #4a6a3d;
@@ -2728,6 +2720,7 @@ color: rgba(247, 230, 197, 1);
 }
 
 .volume-control {
+	margin-top: 0.75em;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -2792,7 +2785,7 @@ color: rgba(247, 230, 197, 1);
 
 	@media (max-width: 768px) {
 		.audio-mixer {
-			min-height: 150px; /* tighter fit for mobile */
+			height: 240px; /* tighter fit for mobile */
 		}
 	}
 
@@ -2804,9 +2797,8 @@ color: rgba(247, 230, 197, 1);
 	.mixer-buttons.hidden {
 		opacity: 0;
 		pointer-events: none;
-		position: absolute;
-		left: 0;
-		right: 0;
+		position: absolute;  /* take it out visually while preserving container height */
+		left: 0; right: 0;
 	}
 
 
