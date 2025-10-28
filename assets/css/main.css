@@ -2771,7 +2771,7 @@ color: rgba(247, 230, 197, 1);
 	.audio-mixer {
 		position: relative;
 		min-height: 180px; /* enough for 4 buttons + slider */
-		transition: min-height 0.3s ease;
+		transition: opacity 0.3s ease;
 	}
 
 	@media (max-width: 768px) {
