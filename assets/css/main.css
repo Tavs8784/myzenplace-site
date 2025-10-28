@@ -2544,7 +2544,7 @@ color: rgba(247, 230, 197, 1);
 	justify-content: center;
 	margin-top: 0.5em;
 	padding: 0.2em;
-	background: rgba(255, 255, 255, 0.4);
+	background: rgba(255, 255, 255, 0.15);
 	border-radius: 1em;
 	backdrop-filter: blur(6px);
 }
