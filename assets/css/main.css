@@ -2617,34 +2617,8 @@ color: rgba(255, 255, 255, 1);
 	justify-content: center;
 }
 /* Hide text labels in sound buttons on small screens */
-@media (max-width: 768px) {
-	.sound-btn {
-		font-size: 1.8em; /* make the icons a bit larger */
-		padding: 0.4em 0.5em;
-	}
 
-	/* Hide text but keep emoji/icon centered */
-	.sound-btn::after {
-		content: "";
-	}
 
-	/* Remove any leftover text */
-	.sound-btn {
-		overflow: hidden;
-		text-indent: -9999px; /* hide text visually */
-		position: relative;
-	}
-
-	/* Restore emoji visibility */
-	.sound-btn::before {
-		content: attr(data-icon);
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		transform: translate(-50%, -50%);
-		text-indent: 0;
-	}
-}
 /* Compact audio mixer layout for mobile */
 @media (max-width: 768px) {
 
@@ -2922,3 +2896,12 @@ color: rgba(255, 255, 255, 1);
 
 :root { --store-badge-size: 56px; }
 @media (max-width: 736px) { :root { --store-badge-size: 44px; } }
+/* Default */
+:root { --mixer-height: 220px; }
+.audio-mixer { position: relative; height: var(--mixer-height); overflow: hidden; }
+
+/* Mobile */
+@media (max-width:768px){
+	:root { --mixer-height: 180px; }
+	.audio-mixer { padding: .75rem 1rem; }
+}
