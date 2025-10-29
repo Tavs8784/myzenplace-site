@@ -2874,11 +2874,13 @@ color: rgba(255, 255, 255, 1);
 .sound-btn::before { content: none !important; }
 
 /* Map each button to its asset in /images */
-.sound-btn[data-sound="ambiance"] { background-image: url("../../images/ambiance.png"); }
-.sound-btn[data-sound="rain"]     { background-image: url("../../images/rain.png"); }
-.sound-btn[data-sound="birds"]    { background-image: url("../../images/birds.png"); }
-.sound-btn[data-sound="wind"]     { background-image: url("../../images/wind.png"); }
-.sound-btn[data-sound="relax"]    { background-image: url("../../images/music.png"); }
+/* Map each button to its asset and store it in --icon */
+.sound-btn[data-sound="ambiance"] { --icon: url("../../images/ambiance.png"); background-image: var(--icon); }
+.sound-btn[data-sound="rain"]     { --icon: url("../../images/rain.png");     background-image: var(--icon); }
+.sound-btn[data-sound="birds"]    { --icon: url("../../images/birds.png");    background-image: var(--icon); }
+.sound-btn[data-sound="wind"]     { --icon: url("../../images/wind.png");     background-image: var(--icon); }
+.sound-btn[data-sound="relax"]    { --icon: url("../../images/music.png");    background-image: var(--icon); }
+
 
 /* Keep size truly fixed: stop any scale transforms from older rules */
 .sound-btn:hover,
@@ -2886,17 +2888,32 @@ color: rgba(255, 255, 255, 1);
 .sound-btn.active { transform: none !important; }
 
 /* White overlay states (hover = lighter, active = stronger) */
+/* White overlay, but clipped to the icon’s alpha via CSS mask */
 .sound-btn::after {
 	content: "";
 	position: absolute;
 	inset: 0;
-	border-radius: inherit;
-	background: rgba(255,255,255,0);
-	transition: background 120ms ease;
+	pointer-events: none;
+	background-color: #fff;
+	opacity: 0;                             /* default off */
+	transition: opacity 120ms ease;
+
+	/* Use the icon itself as the mask (works with transparent PNGs) */
+	-webkit-mask-image: var(--icon);
+	mask-image: var(--icon);
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	mask-position: center;
+	-webkit-mask-size: contain;             /* matches your background-size */
+	mask-size: contain;
 }
-.sound-btn:hover::after         { background: rgba(255,255,255,0.12); }
+
+/* Lighter on hover, stronger when active/playing */
+.sound-btn:hover::after       { opacity: 0.16; }
 .sound-btn:active::after,
-.sound-btn.active::after        { background: rgba(255,255,255,0.28); }
+.sound-btn.active::after      { opacity: 0.32; }
+
 
 
 
