@@ -2859,11 +2859,11 @@ color: rgba(255, 255, 255, 1);
 .sound-btn::before { content: none !important; }
 
 /* Map each button to its asset in /images */
-.sound-btn[data-sound="ambiance"] { background-image: url("images/ambiance.png"); }
-.sound-btn[data-sound="rain"]     { background-image: url("images/rain.png"); }
-.sound-btn[data-sound="birds"]    { background-image: url("images/birds.png"); }
-.sound-btn[data-sound="wind"]     { background-image: url("images/wind.png"); }
-.sound-btn[data-sound="relax"]    { background-image: url("images/music.png"); }
+.sound-btn[data-sound="ambiance"] { background-image: url("../../images/ambiance.png"); }
+.sound-btn[data-sound="rain"]     { background-image: url("../../images/rain.png"); }
+.sound-btn[data-sound="birds"]    { background-image: url("../../images/birds.png"); }
+.sound-btn[data-sound="wind"]     { background-image: url("../../images/wind.png"); }
+.sound-btn[data-sound="relax"]    { background-image: url("../../images/music.png"); }
 
 /* Keep size truly fixed: stop any scale transforms from older rules */
 .sound-btn:hover,
