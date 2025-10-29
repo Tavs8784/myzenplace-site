@@ -2743,7 +2743,7 @@ color: rgba(255, 255, 255, 1);
 /* clickable text links */
 .mode-link {
 	font-weight: 600;
-	color: #ffffffcc;
+	color: #cee5cc;
 	cursor: pointer;
 	font-size: 1em;
 	text-decoration: underline;
@@ -2752,11 +2752,11 @@ color: rgba(255, 255, 255, 1);
 }
 
 .mode-link:hover {
-	color: #ffffff;
+	color: #abbdaa;
 }
 
 .mode-link.active {
-	color: #F2C166;
+	color: #ffffff;
 	text-decoration: none;
 	pointer-events: none; /* makes the active one inert */
 }
