@@ -2520,21 +2520,6 @@ color: rgba(255, 255, 255, 1);
 }
 
 
-.audio-mixer {
-	width: 100%;
-	max-width: none;                 /* was 720px — remove the cap */
-	margin: 1em 0 0;                 /* align with video edges (no extra centering) */
-	padding: 1rem 1.25rem;
-	border-radius: 12px;             /* match the video radius */
-	background: rgba(255,255,255,0.15);
-	backdrop-filter: blur(12px);
-	-webkit-backdrop-filter: blur(12px);
-	box-sizing: border-box;
-	text-align: center;
-
-	/* Fixed height so it never jumps when switching modes */
-	height: 220px;
-}
 
 .audio-mixer h3 {
 	color: #fff;
@@ -2757,17 +2742,7 @@ color: rgba(255, 255, 255, 1);
 	}
 }
 	/* Prevent jump when toggling modes */
-	.audio-mixer {
-		position: relative;
-		min-height: 180px; /* enough for 4 buttons + slider */
-		transition: opacity 0.3s ease;
-	}
 
-	@media (max-width: 768px) {
-		.audio-mixer {
-			height: 240px; /* tighter fit for mobile */
-		}
-	}
 
 	/* Optional fade for smoother feel */
 	.mixer-buttons {
@@ -2904,4 +2879,7 @@ color: rgba(255, 255, 255, 1);
 @media (max-width:768px){
 	:root { --mixer-height: 180px; }
 	.audio-mixer { padding: .75rem 1rem; }
+}
+@media (max-width: 420px) {
+	:root { --mixer-height: 165px; }
 }
