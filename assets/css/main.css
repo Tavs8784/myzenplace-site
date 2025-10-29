@@ -2492,7 +2492,7 @@ color: rgba(255, 255, 255, 1);
 	width: 100%;
 	height: 4px;
 	cursor: pointer;
-	background: #cee5cc;
+	background: #525e51;
 	border-radius: 2px;
 }
 
@@ -2508,7 +2508,7 @@ color: rgba(255, 255, 255, 1);
 #volume-slider::-moz-range-track {
 	width: 100%;
 	height: 4px;
-	background: #D9A407;
+	background: #525e51;
 	border-radius: 2px;
 }
 
