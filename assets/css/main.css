@@ -2717,6 +2717,21 @@ color: rgba(255, 255, 255, 1);
 	justify-content: center;
 	gap: 0.4em;
 }
+/* Volume icon image next to the slider */
+.volume-icon {
+	display: inline-block;
+	width: 22px;              /* keep size compact; tweak if needed */
+	height: 22px;
+	background: url("../../images/volume.png") center/contain no-repeat;
+	flex: 0 0 22px;           /* don’t shrink in the flex row */
+}
+
+/* Optional: nudge alignment for perfect centering with the slider track */
+.volume-control {
+	align-items: center;      /* you already have this in most versions */
+	gap: 0.5em;               /* preserve spacing */
+}
+
 
 /* Compact mobile layout */
 @media (max-width: 768px) {
