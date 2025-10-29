@@ -2841,6 +2841,47 @@ color: rgba(255, 255, 255, 1);
 	}
 }
 
+/* === Image-only sound buttons === */
+
+/* Base: keep current size rules; just use images and hide any text/icons */
+.sound-btn {
+	position: relative;
+	background-color: transparent !important; /* no tint over art */
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;                /* keep button size intact */
+	color: transparent;                      /* hide text caret if any */
+	text-indent: -9999px;                    /* hide any inner text */
+	overflow: hidden;
+}
+
+/* Kill the mobile emoji injection block defined earlier */
+.sound-btn::before { content: none !important; }
+
+/* Map each button to its asset in /images */
+.sound-btn[data-sound="ambiance"] { background-image: url("images/ambiance.png"); }
+.sound-btn[data-sound="rain"]     { background-image: url("images/rain.png"); }
+.sound-btn[data-sound="birds"]    { background-image: url("images/birds.png"); }
+.sound-btn[data-sound="wind"]     { background-image: url("images/wind.png"); }
+.sound-btn[data-sound="relax"]    { background-image: url("images/music.png"); }
+
+/* Keep size truly fixed: stop any scale transforms from older rules */
+.sound-btn:hover,
+.sound-btn:active,
+.sound-btn.active { transform: none !important; }
+
+/* White overlay states (hover = lighter, active = stronger) */
+.sound-btn::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	background: rgba(255,255,255,0);
+	transition: background 120ms ease;
+}
+.sound-btn:hover::after         { background: rgba(255,255,255,0.12); }
+.sound-btn:active::after,
+.sound-btn.active::after        { background: rgba(255,255,255,0.28); }
 
 
 
