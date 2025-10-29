@@ -2792,6 +2792,37 @@ color: rgba(247, 230, 197, 1);
 		left: 0; right: 0;
 	}
 
+/* Default (desktop/tablet) */
+:root { --mixer-height: 220px; }  /* whatever you use now */
+
+.audio-mixer {
+	position: relative;
+	height: var(--mixer-height);
+	overflow: hidden;
+}
+
+/* Mobile: shorter blurred bg + tighter padding/gaps */
+@media (max-width: 768px) {
+	:root { --mixer-height: 180px; }      /* ↓ shorter on phones */
+	.audio-mixer { padding: 0.75rem 1rem; }
+
+	.mixer-buttons {
+		gap: 0.4em;                          /* denser button grid */
+		margin: 0.5em 0;
+	}
+	.sound-btn {                           /* optional: slightly smaller buttons */
+		padding: 0.45em 0.7em;
+		font-size: 0.95rem;
+	}
+	.volume-control { margin-top: 0.35em; }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+	:root { --mixer-height: 165px; }       /* even shorter if needed */
+}
+
+
 
 
 #header .branding { gap: 20px; }   /* title ↔ badges */
