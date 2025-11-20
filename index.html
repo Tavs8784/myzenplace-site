@@ -32,21 +32,22 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-636642803"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);} 
+		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
 		gtag('config', 'AW-636642803');
 	</script>
 
-	<!-- Silktide Cookie Banner (guarded) -->
-	<link rel="stylesheet" id="silktide-consent-manager-css" href="https://cdn.silktide.com/cookie-banner/latest/silktide-consent-manager.css">
-	<script src="https://cdn.silktide.com/cookie-banner/latest/silktide-consent-manager.js" async></script>
+	<link rel="stylesheet" id="silktide-consent-manager-css" href="path-to-css/silktide-consent-manager.css">
+	<script src="path-to-js/silktide-consent-manager.js"></script>
 	<script>
-	(function(){
-		// Preserve original config; guard access and retry until library available (limited attempts)
-		var cookieBannerConfig = {
-			background: { showBackground: true },
-			cookieIcon: { position: "bottomLeft" },
+		silktideCookieBannerManager.updateCookieBannerConfig({
+			background: {
+				showBackground: true
+			},
+			cookieIcon: {
+				position: "bottomLeft"
+			},
 			cookieTypes: [
 				{
 					id: "analitycs",
@@ -54,11 +55,17 @@
 					description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
 					required: false,
 					onAccept: function() {
-						gtag('consent', 'update', { analytics_storage: 'granted' });
-						dataLayer.push({ 'event': 'consent_accepted_analitycs' });
+						gtag('consent', 'update', {
+							analytics_storage: 'granted',
+						});
+						dataLayer.push({
+							'event': 'consent_accepted_analitycs',
+						});
 					},
 					onReject: function() {
-						gtag('consent', 'update', { analytics_storage: 'denied' });
+						gtag('consent', 'update', {
+							analytics_storage: 'denied',
+						});
 					}
 				},
 				{
@@ -72,7 +79,9 @@
 							ad_user_data: 'granted',
 							ad_personalization: 'granted',
 						});
-						dataLayer.push({ 'event': 'consent_accepted_marketing' });
+						dataLayer.push({
+							'event': 'consent_accepted_marketing',
+						});
 					},
 					onReject: function() {
 						gtag('consent', 'update', {
@@ -100,23 +109,10 @@
 					creditLinkAccessibleLabel: "Get this banner for free"
 				}
 			},
-			position: { banner: "bottomCenter" }
-		};
-
-		var attempts = 0; var maxAttempts = 25; // ~5s total if 200ms interval
-		function tryInit(){
-			if (window.silktideCookieBannerManager && typeof window.silktideCookieBannerManager.updateCookieBannerConfig === 'function') {
-				window.silktideCookieBannerManager.updateCookieBannerConfig(cookieBannerConfig);
-				return;
+			position: {
+				banner: "bottomCenter"
 			}
-			if (attempts++ < maxAttempts) {
-				setTimeout(tryInit, 200);
-			} else {
-				console.warn('Silktide cookie banner library not available after retries.');
-			}
-		}
-		tryInit();
-	})();
+		});
 	</script>
 	<!-- Event snippet for Store_Button_Click conversion page -->
 
@@ -128,7 +124,7 @@
 	<script>
 		!function (w, d, t) {
 			w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-				var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
+					var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
 			;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
 
 
@@ -477,4 +473,3 @@
 </script>
 </body>
 </html>
-
