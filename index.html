@@ -2,24 +2,30 @@
 
 
 <html>
+
 <head>
 	<title>My Zen Place — Offline Zen Garden App for Relaxation, Focus & Better Sleep</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	<meta name="description" content="Draw in sand, ripple water, and breathe. My Zen Place is the offline calming app for stress relief, focus, and sleep. No ads. No log-ins. 96-second Box Breathing." />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+	<meta name="description"
+		content="Draw in sand, ripple water, and breathe. My Zen Place is the offline calming app for stress relief, focus, and sleep. No ads. No log-ins. 96-second Box Breathing." />
 	<link rel="canonical" href="https://my-zen-place.com/" />
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="My Zen Place — Draw calm. Ripple focus. Offline." />
-	<meta property="og:description" content="A mindful sandbox for relaxation and focus. Totally offline. Totally yours." />
+	<meta property="og:description"
+		content="A mindful sandbox for relaxation and focus. Totally offline. Totally yours." />
 	<meta property="og:url" content="https://my-zen-place.com/" />
 	<meta property="og:image" content="https://my-zen-place.com/preview.jpg" />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="My Zen Place — Draw calm. Ripple focus. Offline." />
-	<meta name="twitter:description" content="A mindful sandbox for relaxation and focus. Totally offline. Totally yours." />
+	<meta name="twitter:description"
+		content="A mindful sandbox for relaxation and focus. Totally offline. Totally yours." />
 	<meta name="twitter:image" content="https://my-zen-place.com/preview.jpg" />
 	<!-- Site icons -->
 	<link rel="icon" href="favicon.ico" sizes="any">
@@ -32,7 +38,7 @@
 	<script async src="https://www.googletagmanager.com/gtag/js?id=AW-636642803"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
+		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
 
 		gtag('config', 'AW-636642803');
@@ -54,7 +60,7 @@
 					name: "Analitycs",
 					description: "<p>These cookies are necessary for the website to function properly and cannot be switched off. They help with things like logging in and setting your privacy preferences.</p>",
 					required: false,
-					onAccept: function() {
+					onAccept: function () {
 						gtag('consent', 'update', {
 							analytics_storage: 'granted',
 						});
@@ -62,7 +68,7 @@
 							'event': 'consent_accepted_analitycs',
 						});
 					},
-					onReject: function() {
+					onReject: function () {
 						gtag('consent', 'update', {
 							analytics_storage: 'denied',
 						});
@@ -73,7 +79,7 @@
 					name: "Marketing",
 					description: "",
 					required: false,
-					onAccept: function() {
+					onAccept: function () {
 						gtag('consent', 'update', {
 							ad_storage: 'granted',
 							ad_user_data: 'granted',
@@ -83,7 +89,7 @@
 							'event': 'consent_accepted_marketing',
 						});
 					},
-					onReject: function() {
+					onReject: function () {
 						gtag('consent', 'update', {
 							ad_storage: 'denied',
 							ad_user_data: 'denied',
@@ -123,9 +129,13 @@
 	<!-- TikTok Pixel Code Start -->
 	<script>
 		!function (w, d, t) {
-			w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-					var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-			;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+			w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || []; ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"], ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } }; for (var i = 0; i < ttq.methods.length; i++)ttq.setAndDefer(ttq, ttq.methods[i]); ttq.instance = function (t) {
+				for (
+					var e = ttq._i[t] || [], n = 0; n < ttq.methods.length; n++)ttq.setAndDefer(e, ttq.methods[n]); return e
+			}, ttq.load = function (e, n) {
+				var r = "https://analytics.tiktok.com/i18n/pixel/events.js", o = n && n.partner; ttq._i = ttq._i || {}, ttq._i[e] = [], ttq._i[e]._u = r, ttq._t = ttq._t || {}, ttq._t[e] = +new Date, ttq._o = ttq._o || {}, ttq._o[e] = n || {}; n = document.createElement("script")
+					; n.type = "text/javascript", n.async = !0, n.src = r + "?sdkid=" + e + "&lib=" + t; e = document.getElementsByTagName("script")[0]; e.parentNode.insertBefore(n, e)
+			};
 
 
 			ttq.load('D4B0EKJC77UA35RSTF3G');
@@ -152,324 +162,339 @@
 	</script>
 
 </head>
+
 <body class="is-preload">
 
-<!-- Header -->
-<header id="header">
-	<div class="branding">
-		<h1>Get My Zen Place</h1>
+	<!-- Header -->
+	<header id="header">
+		<div class="branding">
+			<h1>Get My Zen Place</h1>
 
 
-		<!-- Uniform badge row -->
-		<div class="store-row" role="group" aria-label="Store badges">
-			<a id="ios-link"
-			   class="store-badge"
-			   href="https://apps.apple.com/us/app/my-zen-place/id6754265998?ppid=4c768ebc-7441-4025-8a77-820c4027e9b7"
-			   onclick="gtag('event', 'conversion', {'send_to': 'AW-636642803/o07xCOuHkMEbEPPLya8C'});"
-			   target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
-				<img src="images/appstore-placeholder.png" alt="Download on the App Store" loading="lazy">
-			</a>
+			<!-- Uniform badge row -->
+			<div class="store-row" role="group" aria-label="Store badges">
+				<a id="ios-link" class="store-badge"
+					href="https://apps.apple.com/us/app/my-zen-place/id6754265998?ppid=4c768ebc-7441-4025-8a77-820c4027e9b7"
+					onclick="gtag('event', 'conversion', {'send_to': 'AW-636642803/o07xCOuHkMEbEPPLya8C'});"
+					target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+					<img src="images/appstore-placeholder.png" alt="Download on the App Store" loading="lazy">
+				</a>
 
 
-			<a id="android-link"
-			   class="store-badge"
-			   href="https://play.google.com/store/apps/details?id=com.taogames.myzenplace"
-			   onclick="gtag('event', 'conversion', {'send_to': 'AW-636642803/o07xCOuHkMEbEPPLya8C'});"
-			   target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
-				<img src="images/playstore-placeholder.png" alt="Get it on Google Play" loading="lazy">
-			</a>
+				<a id="android-link" class="store-badge"
+					href="https://play.google.com/store/apps/details?id=com.taogames.myzenplace"
+					onclick="gtag('event', 'conversion', {'send_to': 'AW-636642803/o07xCOuHkMEbEPPLya8C'});"
+					target="_blank" rel="noopener noreferrer" aria-label="Get it on Google Play">
+					<img src="images/playstore-placeholder.png" alt="Get it on Google Play" loading="lazy">
+				</a>
+			</div>
 		</div>
-	</div>
-	<nav>
-		<ul>
-			<li><a href="#intro">Welcome</a></li>
-			<li><a href="#one">About My Zen Place</a></li>
-			<li><a href="#work">Gallery</a></li>
-			<li><a href="#contact">Contact</a></li>
-		</ul>
-	</nav>
-</header>
+		<nav>
+			<ul>
+				<li><a href="#intro">Welcome</a></li>
+				<li><a href="#one">About My Zen Place</a></li>
+				<li><a href="#work">Gallery</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
 
-<!-- Intro -->
-<section id="intro" class="main style1 dark fullscreen">
-	<div class="content">
-		<header>
-			<h2>The App That Teaches Your Brain to Exhale. </h2>
-		</header>
-		<p id="subtitle"><strong>Draw calm. Ripple focus. Offline.
-			No ads. No tracking. No pressure.</strong></p>
+	<!-- Intro -->
+	<section id="intro" class="main style1 dark fullscreen">
+		<div class="content">
+			<header>
+				<h2>The App That Teaches Your Brain to Exhale. </h2>
+			</header>
+			<p id="subtitle"><strong>Draw calm. Ripple focus. Offline.
+					No ads. No tracking. No pressure.</strong></p>
 
-		<div class="video-wrapper">
-			<!--
+			<div class="video-wrapper">
+				<!--
               Place your video files in /videos/
               Recommended: provide both WebM and MP4 for wider compatibility.
               Replace the filenames below with your actual files.
             -->
-			<video id="heroVideo"
-				   controls
-				   preload="metadata"
-				   playsinline
-				   poster="images/trailer-poster.jpg"
-			>
-				<source src="videos/my-zen-place.webm" type="video/webm">
-				<source src="videos/my-zen-place.mp4" type="video/mp4">
-				Sorry, your browser doesn't support embedded videos.
-			</video>
-			<p id="videoFallbackLink" class="video-caption" style="display:none;">Having trouble? <a href="videos/my-zen-place.mp4" target="_blank" rel="noopener">Open the MP4 directly</a>.</p>
-			<div id="audio-mixer" class="audio-mixer">
-				<div class="mixer-modes">
-					<span id="asmr-toggle" class="mode-link active">Try Layered ASMR</span>
-					<span id="relax-toggle" class="mode-link">Try Relax Mode</span>
-				</div>
+				<video id="heroVideo" controls preload="metadata" playsinline poster="images/trailer-poster.jpg">
+					<source src="videos/my-zen-place.webm" type="video/webm">
+					<source src="videos/my-zen-place.mp4" type="video/mp4">
+					Sorry, your browser doesn't support embedded videos.
+				</video>
+				<p id="videoFallbackLink" class="video-caption" style="display:none;">Having trouble? <a
+						href="videos/my-zen-place.mp4" target="_blank" rel="noopener">Open the MP4 directly</a>.</p>
+				<div id="audio-mixer" class="audio-mixer">
+					<div class="mixer-modes">
+						<span id="asmr-toggle" class="mode-link active">Try Layered ASMR</span>
+						<span id="relax-toggle" class="mode-link">Try Relax Mode</span>
+					</div>
 
 
-				<div class="mixer-buttons" id="asmr-buttons">
-					<button class="sound-btn" data-sound="ambiance" aria-label="Ambiance"></button>
-					<button class="sound-btn" data-sound="rain"     aria-label="Rain"></button>
-					<button class="sound-btn" data-sound="birds"    aria-label="Birds"></button>
-					<button class="sound-btn" data-sound="wind"     aria-label="Wind"></button>
+					<div class="mixer-buttons" id="asmr-buttons">
+						<button class="sound-btn" data-sound="ambiance" aria-label="Ambiance"></button>
+						<button class="sound-btn" data-sound="rain" aria-label="Rain"></button>
+						<button class="sound-btn" data-sound="birds" aria-label="Birds"></button>
+						<button class="sound-btn" data-sound="wind" aria-label="Wind"></button>
+					</div>
+
+					<div class="mixer-buttons hidden" id="relax-buttons">
+						<button id="relax-btn" class="sound-btn" data-sound="relax"
+							aria-label="Relaxing Music"></button>
+					</div>
+
+					<div class="volume-control">
+						<label for="volume-slider" class="volume-icon" aria-label="Volume"></label>
+						<input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7">
+					</div>
 				</div>
 
-				<div class="mixer-buttons hidden" id="relax-buttons">
-					<button id="relax-btn" class="sound-btn" data-sound="relax" aria-label="Relaxing Music"></button>
-				</div>
-
-				<div class="volume-control">
-					<label for="volume-slider" class="volume-icon" aria-label="Volume"></label>
-					<input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7">
-				</div>
+				<footer>
+					<a href="#one" class="button style2 down">Next</a>
+				</footer>
 			</div>
 
-			<footer>
-				<a href="#one" class="button style2 down">Next</a>
-			</footer>
 		</div>
-		
-	</div>
-</section>
+	</section>
 
-<!-- One -->
-<section id="one" class="main style2 right dark fullscreen">
-	<div class="content box style2">
-		<header>
-			<h2>Why My Zen Place Exists</h2>
-		</header>
+	<!-- One -->
+	<section id="one" class="main style2 right dark fullscreen">
+		<div class="content box style2">
+			<header>
+				<h2>Why My Zen Place Exists</h2>
+			</header>
 
-		<!-- Hero / one-liner -->
-		<p>Most apps demand your attention.
-			This one gives it back to you.
+			<!-- Hero / one-liner -->
+			<p>Most apps demand your attention.
+				This one gives it back to you.
 
-			Every swipe in the sand sends a signal through your nervous system: you’re safe now.
-			The water answers with ripples. Light shifts. Your brain softens its grip.
+				Every swipe in the sand sends a signal through your nervous system: you’re safe now.
+				The water answers with ripples. Light shifts. Your brain softens its grip.
 
-			This is the Touch → Ripple → Calm Loop — a pocket-ritual designed to reset focus, release tension, and remind you that peace isn’t earned, it’s allowed.</p>
+				This is the Touch → Ripple → Calm Loop — a pocket-ritual designed to reset focus, release tension, and
+				remind you that peace isn’t earned, it’s allowed.</p>
 
-		<!-- Quick read for low-focus visitors -->
-		<h2 id="offline">Offline zen garden app for relaxation &amp; focus</h2>
-		<ul>
-			<li>Draw lines in sand — feel smooth, tactile feedback.</li>
-			<li>Tap water to make ripples dance.</li>
-			<li>Watch dusk slide into night; lanterns glow; fireflies drift.</li>
-			<li>Place stones, sakura, cabins, temples — build your quiet world.</li>
-			<li>Save and return anytime; your calm travels with you.</li>
-		</ul>
+			<!-- Quick read for low-focus visitors -->
+			<h2 id="offline">Offline zen garden app for relaxation &amp; focus</h2>
+			<ul>
+				<li>Draw lines in sand — feel smooth, tactile feedback.</li>
+				<li>Tap water to make ripples dance.</li>
+				<li>Watch dusk slide into night; lanterns glow; fireflies drift.</li>
+				<li>Place stones, sakura, cabins, temples — build your quiet world.</li>
+				<li>Save and return anytime; your calm travels with you.</li>
+			</ul>
 
-		<!-- Story / Sugarman-style narrative -->
-		<h3>The story</h3>
-		<p>You touch the screen.
-			A clean line appears in warm sand.
-			Water ripples. Light changes.
-			And for a moment — the day loosens its grip.
+			<!-- Story / Sugarman-style narrative -->
+			<h3>The story</h3>
+			<p>You touch the screen.
+				A clean line appears in warm sand.
+				Water ripples. Light changes.
+				And for a moment — the day loosens its grip.
 
-			That’s My Zen Place.
-			A gentle rebellion against dopamine-scrolling.
-			A simple, sensory ritual that teaches your mind to unclench.
-			<strong>Comfort & Well-Being</strong>
-			Gentle colors. Low-effort controls.
-			Accessible to tired eyes, sensitive minds, and restless travelers.
+				That’s My Zen Place.
+				A gentle rebellion against dopamine-scrolling.
+				A simple, sensory ritual that teaches your mind to unclench.
+				<strong>Comfort & Well-Being</strong>
+				Gentle colors. Low-effort controls.
+				Accessible to tired eyes, sensitive minds, and restless travelers.
 
-			Relaxation practices like breathing and tactile focus are linked with lower stress, better sleep, and steadier attention.
-			This isn’t medicine — it’s a tool that helps your body remember what calm feels like.</p>
-		
-		
-		
-
-		<!-- Practical benefits -->
-		<h2 id="use-cases">Perfect for flights, study breaks, and bedtime wind-downs</h2>
-
-		<h3>How it helps (plain and practical)</h3>
-		<ul>
-			<li>Gentle sensory grounding: touch (sand &amp; water), sight (light &amp; motion), sound (layered ASMR) to lower mental noise.</li>
-			<li>Short rituals that fit your day: a quick 96-second reset before meetings, study, or sleep.</li>
-			<li>Hands-free calm: slow-orbit viewing with time-lapse lighting when you’re tired of “doing.”</li>
-		</ul>
-		<h2 id="asmr">ASMR sound mixer: rain, wind, birds, piano, 528 Hz</h2>
-
-		<!-- Feature checklist -->
-		<h3>What you can do</h3>
-		<ul>
-			<li>Draw in sand with thin or thick strokes; enjoy smooth, tactile feedback.</li>
-			<li>Paint in water—tap and swipe to create satisfying ripples.</li>
-			<li>Follow Box-Breathing (4-4-4-4) with visual cues (~96 s).</li>
-			<li>Mix rain, wind, birds, white noise, soft piano, and an optional 528 Hz tone.</li>
-			<li>Watch day→night cycles, gentle weather, fireflies at night, and a cozy time-lapse orbit.</li>
-			<li>Place rocks, trees, sakura, lanterns, cabins, and temples—make something beautiful.</li>
-			<li>Save and revisit multiple gardens with thumbnails.</li>
-		</ul>
-
-		<h2 id="no_ads">Totally offline. One-time purchase. No ads. Ever.</h2><!-- Travel + offline -->
-		<h3>Travel-friendly by design</h3>
-		<ul>
-			<li>Instant access: launches fast; perfect for queues, commutes, and flights.</li>
-			<li>Offline and private: works in airplane mode; no account, no data collection.</li>
-		</ul>
-
-		<!-- Accessibility -->
-		<h3>Comfort &amp; accessibility</h3>
-		<p>Clear visual breathing cues, adjustable audio sliders, gentle palettes, and low-effort controls designed for tired brains and sensitive eyes.</p>
-
-		<!-- Well-being note -->
-		<p><small><strong>Not a medical tool:</strong> relaxation practices are associated with benefits like lower perceived stress, steadier attention, and better sleep quality. My Zen Place doesn’t diagnose or treat conditions—it simply offers a gentle, repeatable space to unwind and support mental well-being.</small></p>
-
-		<!-- Closing reassurance -->
-		<p><strong>Totally offline.</strong> Give it 96 seconds: draw, ripple, breathe—then carry that calm into the rest of your day.</p>
-	</div>
-
-
-	<a href="#work" class="button style2 down anchored">Next</a>
-</section>
-
-
-
-<!-- Work -->
-<section id="work" class="main style3 primary">
-	<div class="content">
-
-
-		<!-- Gallery  -->
-		<div class="gallery">
-			<article class="from-left">
-				<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="Water ripples and dusk ambience — calming sandbox " loading="lazy"  /></a>
-			</article>
-			<article class="from-right">
-				<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="" alt="Zen garden app — draw in sand for instant calm" loading="lazy" /></a>
-			</article>
-			<article class="from-left">
-				<a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="" alt="Box-breathing timer — 96-second reset" loading="lazy" /></a>
-			</article>
-			<article class="from-right">
-				<a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="" alt="Options - Customize your calm" loading="lazy" /></a>
-			</article>
-			<article class="from-left">
-				<a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title="" alt="Rain Droplets — Storm outside, calm inside" loading="lazy" /></a>
-			</article>
-			<article class="from-right">
-				<a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title="" alt="Meditation Camera — 528Hz meditation" loading="lazy" /></a>
-			</article>
-			<article class="from-left">
-				<a href="images/fulls/07.jpg" class="image fit"><img src="images/thumbs/07.jpg" title="" alt="Night Time — Magic" loading="lazy" /></a>
-			</article>
-			<article class="from-right">
-				<a href="images/fulls/08.jpg" class="image fit"><img src="images/thumbs/08.jpg" title="" alt="Zen Place — Create your zen place" loading="lazy" /></a>
-			</article>
-		</div>
-
-	</div>
-	<a href="#contact" class="button style2 down anchored">Next</a>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="main style3 secondary">
-	<div class="content">
-		<header>
-			<h2>Say Hello.</h2>
-			<p>Let us know what you think.</p>
-		</header>
-		<div class="box">
-			<form method="POST" action="https://formsubmit.co/support@my-zen-place.com" id="contact-form">
-				<div class="fields">
-					<div class="field half"><input type="text" name="name" placeholder="Name" required></div>
-					<div class="field half"><input type="email" name="email" placeholder="Email" required></div>
-					<div class="field"><textarea name="message" placeholder="Message" rows="6" required></textarea></div>
-				</div>
-
-				<!-- FormSubmit options -->
-				<input type="hidden" name="_next" value="https://www.my-zen-place.com/support/thanks.html">
-				<input type="hidden" name="_captcha" value="false">
-				<input type="hidden" name="_subject" value="My Zen Place – New contact form message">
-				<!-- optional basic spam trap -->
-				<input type="text" name="_honey" style="display:none">
-
-				<ul class="actions special">
-					<li><input type="submit" value="Send Message"></li>
-				</ul>
-			</form>
-			<p>Prefer email?
-				<a id="support-link">support@my-zen-place.com</a>
+				Relaxation practices like breathing and tactile focus are linked with lower stress, better sleep, and
+				steadier attention.
+				This isn’t medicine — it’s a tool that helps your body remember what calm feels like.
 			</p>
-			<script>
-				// base64('taokilltime@gmail.com') -> 'dGFva2lsbHRpbWVAZ21haWwuY29t'
-				const target = atob('c3VwcG9ydEBteS16ZW4tcGxhY2UuY29t');
-				const a = document.getElementById('support-link');
-				a.href = 'mailto:' + target + '?subject=My%20Zen%20Place%20Support';
-				a.setAttribute('rel','noopener');
-			</script>
 
 
 
 
-			<!-- Scripts -->
-			<script src="assets/js/audio-mixer.js"></script>
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<!-- Practical benefits -->
+			<h2 id="use-cases">Perfect for flights, study breaks, and bedtime wind-downs</h2>
 
+			<h3>How it helps (plain and practical)</h3>
+			<ul>
+				<li>Gentle sensory grounding: touch (sand &amp; water), sight (light &amp; motion), sound (layered ASMR)
+					to lower mental noise.</li>
+				<li>Short rituals that fit your day: a quick 96-second reset before meetings, study, or sleep.</li>
+				<li>Hands-free calm: slow-orbit viewing with time-lapse lighting when you’re tired of “doing.”</li>
+			</ul>
+			<h2 id="asmr">ASMR sound mixer: rain, wind, birds, piano, 528 Hz</h2>
+
+			<!-- Feature checklist -->
+			<h3>What you can do</h3>
+			<ul>
+				<li>Draw in sand with thin or thick strokes; enjoy smooth, tactile feedback.</li>
+				<li>Paint in water—tap and swipe to create satisfying ripples.</li>
+				<li>Follow Box-Breathing (4-4-4-4) with visual cues (~96 s).</li>
+				<li>Mix rain, wind, birds, white noise, soft piano, and an optional 528 Hz tone.</li>
+				<li>Watch day→night cycles, gentle weather, fireflies at night, and a cozy time-lapse orbit.</li>
+				<li>Place rocks, trees, sakura, lanterns, cabins, and temples—make something beautiful.</li>
+				<li>Save and revisit multiple gardens with thumbnails.</li>
+			</ul>
+
+			<h2 id="no_ads">Totally offline. One-time purchase. No ads. Ever.</h2><!-- Travel + offline -->
+			<h3>Travel-friendly by design</h3>
+			<ul>
+				<li>Instant access: launches fast; perfect for queues, commutes, and flights.</li>
+				<li>Offline and private: works in airplane mode; no account, no data collection.</li>
+			</ul>
+
+			<!-- Accessibility -->
+			<h3>Comfort &amp; accessibility</h3>
+			<p>Clear visual breathing cues, adjustable audio sliders, gentle palettes, and low-effort controls designed
+				for tired brains and sensitive eyes.</p>
+
+			<!-- Well-being note -->
+			<p><small><strong>Not a medical tool:</strong> relaxation practices are associated with benefits like lower
+					perceived stress, steadier attention, and better sleep quality. My Zen Place doesn’t diagnose or
+					treat conditions—it simply offers a gentle, repeatable space to unwind and support mental
+					well-being.</small></p>
+
+			<!-- Closing reassurance -->
+			<p><strong>Totally offline.</strong> Give it 96 seconds: draw, ripple, breathe—then carry that calm into the
+				rest of your day.</p>
+		</div>
+
+
+		<a href="#work" class="button style2 down anchored">Next</a>
+	</section>
+
+
+
+	<!-- Work -->
+	<section id="work" class="main style3 primary">
+		<div class="content">
+
+
+			<!-- Gallery  -->
+			<div class="gallery">
+				<article class="from-left">
+					<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg"
+							title="Water ripples and dusk ambience — calming sandbox " loading="lazy" /></a>
+				</article>
+				<article class="from-right">
+					<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title=""
+							alt="Zen garden app — draw in sand for instant calm" loading="lazy" /></a>
+				</article>
+				<article class="from-left">
+					<a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title=""
+							alt="Box-breathing timer — 96-second reset" loading="lazy" /></a>
+				</article>
+				<article class="from-right">
+					<a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title=""
+							alt="Options - Customize your calm" loading="lazy" /></a>
+				</article>
+				<article class="from-left">
+					<a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title=""
+							alt="Rain Droplets — Storm outside, calm inside" loading="lazy" /></a>
+				</article>
+				<article class="from-right">
+					<a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title=""
+							alt="Meditation Camera — 528Hz meditation" loading="lazy" /></a>
+				</article>
+				<article class="from-left">
+					<a href="images/fulls/07.jpg" class="image fit"><img src="images/thumbs/07.jpg" title=""
+							alt="Night Time — Magic" loading="lazy" /></a>
+				</article>
+				<article class="from-right">
+					<a href="images/fulls/08.jpg" class="image fit"><img src="images/thumbs/08.jpg" title=""
+							alt="Zen Place — Create your zen place" loading="lazy" /></a>
+				</article>
+			</div>
 
 		</div>
-	</div>
-</section>
-<script>
-	// Device-aware store links: Desktop shows both; iOS only App Store; Android only Google Play.
-	(function () {
-		function ready(fn){ if(document.readyState !== 'loading'){ fn(); } else { document.addEventListener('DOMContentLoaded', fn); } }
-		ready(function(){
-			try {
-				var iosLink = document.getElementById('ios-link');
-				var androidLink = document.getElementById('android-link');
-				if (!iosLink || !androidLink) return;
+		<a href="#contact" class="button style2 down anchored">Next</a>
+	</section>
 
-				var ua = navigator.userAgent || '';
-				var platform = navigator.platform || '';
-				var maxTP = navigator.maxTouchPoints || 0;
+	<!-- Contact -->
+	<section id="contact" class="main style3 secondary">
+		<div class="content">
+			<header>
+				<h2>Say Hello.</h2>
+				<p>Let us know what you think.</p>
+			</header>
+			<div class="box">
+				<form method="POST" action="https://api.web3forms.com/submit" id="contact-form">
+					<div class="fields">
+						<div class="field half"><input type="text" name="name" placeholder="Name" required></div>
+						<div class="field half"><input type="email" name="email" placeholder="Email" required></div>
+						<div class="field"><textarea name="message" placeholder="Message" rows="6" required></textarea>
+						</div>
+					</div>
 
-				// iPadOS can report "MacIntel" platform; touch points > 1 is a good hint
-				var isIOS = /iPad|iPhone|iPod/.test(ua) || (platform === 'MacIntel' && maxTP > 1);
-				var isAndroid = /Android/i.test(ua);
+					<!-- Web3Forms options -->
+					<input type="hidden" name="access_key" value="c4cbf381-51eb-4b8c-a25e-a5e5ee95c846">
+					<input type="hidden" name="redirect" value="https://www.my-zen-place.com/support/thanks.html">
+					<input type="hidden" name="subject" value="My Zen Place – New contact form message">
+					<!-- botcheck spam trap -->
+					<input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-				// Default (desktop/unknown): show both
-				iosLink.style.display = '';
-				androidLink.style.display = '';
+					<ul class="actions special">
+						<li><input type="submit" value="Send Message"></li>
+					</ul>
+				</form>
+				<p>Prefer email?
+					<a id="support-link">support@my-zen-place.com</a>
+				</p>
+				<script>
+					// base64('taokilltime@gmail.com') -> 'dGFva2lsbHRpbWVAZ21haWwuY29t'
+					const target = atob('c3VwcG9ydEBteS16ZW4tcGxhY2UuY29t');
+					const a = document.getElementById('support-link');
+					a.href = 'mailto:' + target + '?subject=My%20Zen%20Place%20Support';
+					a.setAttribute('rel', 'noopener');
+				</script>
 
-				if (isIOS) {
-					androidLink.style.display = 'none';
-				} else if (isAndroid) {
-					iosLink.style.display = 'none';
+
+
+
+				<!-- Scripts -->
+				<script src="assets/js/audio-mixer.js"></script>
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/jquery.poptrox.min.js"></script>
+				<script src="assets/js/jquery.scrolly.min.js"></script>
+				<script src="assets/js/jquery.scrollex.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+
+
+			</div>
+		</div>
+	</section>
+	<script>
+		// Device-aware store links: Desktop shows both; iOS only App Store; Android only Google Play.
+		(function () {
+			function ready(fn) { if (document.readyState !== 'loading') { fn(); } else { document.addEventListener('DOMContentLoaded', fn); } }
+			ready(function () {
+				try {
+					var iosLink = document.getElementById('ios-link');
+					var androidLink = document.getElementById('android-link');
+					if (!iosLink || !androidLink) return;
+
+					var ua = navigator.userAgent || '';
+					var platform = navigator.platform || '';
+					var maxTP = navigator.maxTouchPoints || 0;
+
+					// iPadOS can report "MacIntel" platform; touch points > 1 is a good hint
+					var isIOS = /iPad|iPhone|iPod/.test(ua) || (platform === 'MacIntel' && maxTP > 1);
+					var isAndroid = /Android/i.test(ua);
+
+					// Default (desktop/unknown): show both
+					iosLink.style.display = '';
+					androidLink.style.display = '';
+
+					if (isIOS) {
+						androidLink.style.display = 'none';
+					} else if (isAndroid) {
+						iosLink.style.display = 'none';
+					}
+				} catch (e) {
+					// Fail open: show both if anything goes wrong
+					var iosLink = document.getElementById('ios-link');
+					var androidLink = document.getElementById('android-link');
+					if (iosLink) iosLink.style.display = '';
+					if (androidLink) androidLink.style.display = '';
+					console.error('Store link detection failed:', e);
 				}
-			} catch (e) {
-				// Fail open: show both if anything goes wrong
-				var iosLink = document.getElementById('ios-link');
-				var androidLink = document.getElementById('android-link');
-				if (iosLink) iosLink.style.display = '';
-				if (androidLink) androidLink.style.display = '';
-				console.error('Store link detection failed:', e);
-			}
-		});
-	})();
-</script>
+			});
+		})();
+	</script>
 </body>
+
 </html>
