@@ -143,23 +143,84 @@
 		}(window, document, 'ttq');
 	</script>
 	<!-- TikTok Pixel Code End -->
-	<!-- Schema.org: Mobile App -->
+	<!-- Schema.org: WebSite + Mobile App -->
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
-			"@type": "MobileApplication",
-			"name": "My Zen Place",
-			"operatingSystem": "iOS, Android",
-			"applicationCategory": "LifestyleApplication",
-			"description": "Offline zen garden sandbox for relaxation, mindfulness, and focus. Draw in sand, ripple water, and breathe with a 96-second box-breath reset.",
-			"installUrl": [
-				"https://apps.apple.com/us/app/my-zen-place/id6754265998?ppid=4c768ebc-7441-4025-8a77-820c4027e9b7",
-				"https://play.google.com/store/apps/details?id=com.taogames.myzenplace"
-			],
-			"image": "https://my-zen-place.com/preview.jpg",
-			"url": "https://my-zen-place.com/"
+			"@graph": [
+				{
+					"@type": "WebSite",
+					"@id": "https://my-zen-place.com/#website",
+					"name": "My Zen Place",
+					"url": "https://my-zen-place.com/",
+					"description": "A relaxing sand garden and mindfulness app for stress relief, focus, and sleep.",
+					"inLanguage": [
+						"en"
+					],
+					"image": "https://my-zen-place.com/preview.jpg",
+					"publisher": {
+						"@id": "https://my-zen-place.com/#organization"
+					},
+					"about": {
+						"@id": "https://my-zen-place.com/#app"
+					},
+					"sameAs": []
+				},
+				{
+					"@type": "Organization",
+					"@id": "https://my-zen-place.com/#organization",
+					"name": "My Zen Place",
+					"url": "https://my-zen-place.com/",
+					"logo": "https://my-zen-place.com/preview.jpg",
+					"sameAs": []
+				},
+				{
+					"@type": "MobileApplication",
+					"@id": "https://my-zen-place.com/#app",
+					"name": "My Zen Place",
+					"url": "https://my-zen-place.com/",
+					"description": "A relaxing sand garden and mindfulness app for stress relief, focus, and sleep.",
+					"image": "https://my-zen-place.com/preview.jpg",
+					"inLanguage": [
+						"en"
+					],
+					"applicationCategory": "https://schema.org/LifestyleApplication",
+					"operatingSystem": [
+						"iOS",
+						"Android"
+					],
+					"offers": {
+						"@type": "Offer",
+						"priceCurrency": "USD",
+						"price": "5.99",
+						"availability": "https://schema.org/InStock",
+						"url": "https://my-zen-place.com/"
+					},
+					"isAccessibleForFree": false,
+					"featureList": [
+						"Draw patterns in sand and place plants and objects",
+						"Guided box-breathing exercises for stress relief, focus, and sleep",
+						"Calming ambient sounds including rain and nature audio",
+						"Meditation camera and time-lapse viewing mode",
+						"Offline, one-time purchase experience with no ads and no tracking"
+					],
+					"installUrl": [
+						"https://apps.apple.com/us/app/my-zen-place/id6754265998?ppid=4c768ebc-7441-4025-8a77-820c4027e9b7",
+						"https://play.google.com/store/apps/details?id=com.taogames.myzenplace"
+					],
+					"publisher": {
+						"@id": "https://my-zen-place.com/#organization"
+					},
+					"mainEntityOfPage": {
+						"@id": "https://my-zen-place.com/#website"
+					},
+					"sameAs": []
+				}
+			]
 		}
 	</script>
+	<!-- End Schema.org: WebSite + Mobile App -->
+	<!-- ...existing head content... -->
 
 </head>
 
@@ -498,3 +559,4 @@
 </body>
 
 </html>
+
